@@ -30,10 +30,10 @@ body {
     border-top: 2px solid black;
 }
 .Review_Card {
-    display: flex;
+    display: grid;
     gap: 30px;
     padding: 10px;
-    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
 }
 .Review_Card > div {
     display: flex;
