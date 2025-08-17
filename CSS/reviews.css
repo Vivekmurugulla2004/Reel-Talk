@@ -41,3 +41,44 @@ body {
     align-items: center;
     
 }
+
+@media (max-width: 768px) {
+  header {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .Header_Image {
+        transform: scale(1);
+        margin-bottom: 10px;
+    }
+
+    .Header_Title {
+        width: auto;
+        height: auto;
+        font-size: medium;
+    }
+
+    .subheader {
+        display: flex;
+        justify-content: space-around;
+        padding: 5px 0;       
+    }
+
+    .subheader a {
+        font-size: 14px;
+        padding: 5px;
+        display: inline;
+    }
+
+    .Review_Card {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .Review_Card img {
+        width: 150px;
+        height: auto;
+    }
+}
