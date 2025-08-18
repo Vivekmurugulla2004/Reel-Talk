@@ -51,6 +51,15 @@ body {
     margin-bottom: 20px;
 }
 
+.about-list {
+    text-align: justify;
+    max-width: 1000px;
+    margin: auto;
+    font-size: larger;
+    margin-top: 0px; 
+    margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -94,6 +103,17 @@ body {
         padding: 0 15px;
         font-size: medium;
     }
+
+    .about-list {
+    padding-left: 25px;
+    margin: 10px 15px;
+    }
+
+    .about-list li {
+    margin-bottom: 8px;
+    font-size: medium;
+    }
+
 }
 
 
