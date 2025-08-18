@@ -36,9 +36,11 @@ body {
 }
 .about img {
     display: block;
-    margin: 0 auto;
-    margin-top: 10px; 
-    margin-bottom: 20px;
+    margin: 20px auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 .about-paragraph {
     text-align: justify;
@@ -80,8 +82,12 @@ body {
     }
 
     .about img {
-        max-width: 200px;
-        height: auto;
+        display: block;
+        margin: 20px auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
     }
 
     .about-paragraph {
