@@ -1,0 +1,99 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #e2e2e2 0%, #CF9FFF 4%, #CF9FFF 96%, #e2e2e2 100%)    
+}
+body {
+    margin: 0;
+}
+.Header_Title {
+    width: 221.77px;
+    height: 64.63px;
+    text-align: center;
+    font-size: small;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+.Header_Image {
+    transform: scale(1.1);
+}
+.subheader a {
+    display: block;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.subheader {
+    display: flex;
+    justify-content: space-evenly;
+    background: linear-gradient(to right, #e2e2e2 0%,  #DBB8FF 4%, #DBB8FF 96%, #e2e2e2 100%);    
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+.Article_Card {
+    display: grid;
+    gap: 30px;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.costume_article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.costume_article img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+}
+
+.article_title {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.Article_Card > .costume_article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .Header_Title {
+        width: auto;
+        height: auto;
+        font-size: medium;
+    }
+
+    .subheader {
+        justify-content: space-around;
+        padding: 5px 0;
+    }
+
+    .subheader a {
+        font-size: 14px;
+    }
+
+    .Article_Card {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .costume_article img {
+        width: 150px;
+        height: auto;
+    }
+}
