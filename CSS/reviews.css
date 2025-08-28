@@ -29,18 +29,44 @@ body {
     border-bottom: 2px solid black;
     border-top: 2px solid black;
 }
+
 .Review_Card {
     display: grid;
     gap: 30px;
     padding: 10px;
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
 }
-.Review_Card > div {
+
+.Review_Card > * {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    text-align: center;
 }
+
+.Review_Card img {
+    width: 100%;
+    max-width: 225px;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+}
+
+.Review_Card a {
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.Review_Card a:hover {
+    text-decoration: underline; /* hover effect */
+}
+
 
 @media (max-width: 768px) {
   header {
@@ -76,9 +102,10 @@ body {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 15px;
     }
-
     .Review_Card img {
         width: 150px;
-        height: auto;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
     }
+
 }
