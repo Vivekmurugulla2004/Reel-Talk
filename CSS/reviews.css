@@ -125,9 +125,11 @@ label[for="sortOrder"] {
         gap: 15px;
     }
     .Review_Card img {
-        width: 150px;
-        aspect-ratio: 3 / 2;
-        object-fit: cover;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
     }
 
     label[for="sortOrder"] {
