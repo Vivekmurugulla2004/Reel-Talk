@@ -129,4 +129,11 @@ label[for="sortOrder"] {
         object-fit: cover;
     }
 
+    #sortOrder {
+        width: 100%;
+        max-width: 240px;
+        margin: 6px 8px 0 8px;
+        font-size: 14px;
+    }
+
 }
