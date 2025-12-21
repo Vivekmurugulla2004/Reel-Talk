@@ -1,0 +1,147 @@
+.Review_Card {
+  position: relative;
+  padding: 2.5rem 1.5rem 3.25rem;
+  border-radius: 18px;
+  background:
+    radial-gradient(1200px 500px at 50% 20%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%),
+    linear-gradient(to bottom, rgba(255,255,255,0.25), rgba(255,255,255,0.08));
+}
+
+.Review_Card::before {
+  content: "";
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  top: 70px;
+  bottom: 60px;
+  border-radius: 16px;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.02) 22%, rgba(0,0,0,0.00) 38%),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.18) 0px,
+      rgba(0,0,0,0.18) 2px,
+      rgba(255,255,255,0.00) 2px,
+      rgba(255,255,255,0.00) 210px
+    );
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.10);
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.Review_Card > div {
+  position: relative;
+  z-index: 1;
+  gap: 12px;
+  align-items: center;
+}
+
+.Review_Card img {
+  width: 100%;
+  max-width: 225px;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+}
+
+.Review_Card > div > a:first-child {
+  position: relative;
+  display: block;
+  width: 225px;
+  padding: 10px 10px 10px 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.60);
+  border: 1px solid rgba(0,0,0,0.18);
+  box-shadow:
+    0 18px 35px rgba(0,0,0,0.22),
+    inset 0 0 0 1px rgba(255,255,255,0.35);
+  transform: perspective(900px) rotateY(10deg) rotateZ(-0.6deg);
+  transform-origin: left center;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.Review_Card > div > a:first-child::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  bottom: 10px;
+  width: 9px;
+  border-radius: 8px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.10));
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.18),
+    2px 0 10px rgba(0,0,0,0.25);
+}
+
+.Review_Card > div > a:first-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.55) 0%,
+    rgba(255,255,255,0.16) 28%,
+    rgba(255,255,255,0.00) 55%
+  );
+  opacity: 0.30;
+  transition: opacity 180ms ease;
+}
+
+.Review_Card > div > a:first-child img {
+  max-width: none;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.14);
+}
+
+.Review_Card > div > a:first-child:hover {
+  transform: perspective(900px) translateX(26px) translateY(-6px) rotateY(-6deg) rotateZ(0.4deg) scale(1.02);
+  border-color: rgba(0,0,0,0.26);
+  background: rgba(255,255,255,0.72);
+  box-shadow:
+    0 26px 55px rgba(0,0,0,0.32),
+    inset 0 0 0 1px rgba(255,255,255,0.40);
+}
+
+.Review_Card > div > a:first-child:hover::after {
+  opacity: 0.55;
+}
+
+.Review_Card > div > a:first-child:focus-visible {
+  outline: 3px solid #CF9FFF;
+  outline-offset: 6px;
+}
+
+@media only screen and (max-width: 750px) {
+  .Review_Card {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .Review_Card::before {
+    left: 4%;
+    right: 4%;
+    top: 58px;
+    bottom: 48px;
+    opacity: 0.22;
+  }
+
+  .Review_Card > div > a:first-child {
+    width: 100%;
+    max-width: 260px;
+    transform: none;
+  }
+
+  .Review_Card > div > a:first-child:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+
+  .Review_Card img {
+    aspect-ratio: 2 / 3;
+    object-fit: contain;
+  }
+}
