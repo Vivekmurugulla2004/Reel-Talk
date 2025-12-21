@@ -1,3 +1,19 @@
+.Review_Card.games-grid {
+  display: grid;
+  gap: 30px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  justify-items: center;
+}
+
+.Review_Card.games-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+
 .Review_Card.games-grid img {
   width: 100%;
   max-width: 225px;
@@ -5,11 +21,6 @@
   object-fit: cover;
   display: block;
   border-radius: 10px;
-}
-
-.Review_Card.games-grid > div {
-  gap: 10px;
-  align-items: center;
 }
 
 .Review_Card.games-grid .cover-link {
@@ -79,6 +90,11 @@
 }
 
 @media only screen and (max-width: 750px) {
+  .Review_Card.games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
   .Review_Card.games-grid .cover-link {
     width: 100%;
     max-width: 240px;
