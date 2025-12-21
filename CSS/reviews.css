@@ -2,50 +2,39 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #e2e2e2 0%, #CF9FFF 4%, #CF9FFF 96%, #e2e2e2 100%);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+    background: linear-gradient(to right, #e2e2e2 0%, #CF9FFF 4%, #CF9FFF 96%, #e2e2e2 100%)    
 }
-
 body {
     margin: 0;
-    background:
-        radial-gradient(1200px 600px at 50% 0%, rgba(207,159,255,0.22), rgba(255,255,255,0) 60%),
-        linear-gradient(to bottom, rgba(226,226,226,0.65), rgba(255,255,255,1));
 }
-
 .Header_Title {
     width: 221.77px;
     height: 64.63px;
     text-align: center;
     font-size: small;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
-
 .Header_Image {
     transform: scale(1.1);
 }
-
 .subheader a {
     display: block;
     color: black;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
-
 .subheader {
     display: flex;
     justify-content: space-evenly;
-    background: linear-gradient(to right, #e2e2e2 0%, #DBB8FF 4%, #DBB8FF 96%, #e2e2e2 100%);
+    background: linear-gradient(to right, #e2e2e2 0%,  #DBB8FF 4%, #DBB8FF 96%, #e2e2e2 100%);    
     border-bottom: 2px solid black;
     border-top: 2px solid black;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
 }
 
 .Review_Card {
     display: grid;
-    gap: 26px;
-    padding: 26px 18px 40px;
+    gap: 30px;
+    padding: 10px;
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-    perspective: 1100px;
 }
 
 .Review_Card > * {
@@ -53,6 +42,137 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+.Review_Card img {
+    width: 100%;
+    max-width: 225px;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+}
+
+.Review_Card a {
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.Review_Card a:hover {
+    text-decoration: underline; /* hover effect */
+}
+
+label[for="sortOrder"] {
+    display: inline-block;
+    margin: 12px 8px 0 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#sortOrder {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 28px 6px 10px;
+    font: 14px Arial, sans-serif;
+    border: 1.5px solid black;
+    border-radius: 8px;
+    background: #DBB8FF;
+    cursor: pointer;
+}
+
+#sortOrder:focus {
+    outline: 2px solid #CF9FFF;
+    outline-offset: 2px;
+}
+
+
+@media (max-width: 768px) {
+  header {
+        flex-direction: column;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .Header_Image {
+        transform: scale(1);
+        margin-bottom: 10px;
+    }
+
+    .Header_Title {
+        width: auto;
+        height: auto;
+        font-size: medium;
+    }
+
+    .subheader {
+        display: flex;
+        justify-content: space-around;
+        padding: 5px 0;       
+    }
+
+    .subheader a {
+        font-size: 14px;
+        padding: 5px;
+        display: inline;
+    }
+
+    .Review_Card {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    .Review_Card img {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+    }
+
+    label[for="sortOrder"] {
+        margin: 8px 6px 0 8px;
+        font-size: 14px;
+    }
+
+    #sortOrder {
+        width: 100%;
+        max-width: 240px;
+        margin: 6px 8px 0 8px;
+        font-size: 14px;
+    }
+}
+
+/* =========================================================
+   Reviews page: poster-picker look (OVERRIDES ONLY)
+   Paste below your existing CSS (keeps everything above).
+   ========================================================= */
+
+body {
+    background:
+        radial-gradient(1200px 600px at 50% 0%, rgba(207,159,255,0.22), rgba(255,255,255,0) 60%),
+        linear-gradient(to bottom, rgba(226,226,226,0.65), rgba(255,255,255,1));
+}
+
+header {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+}
+
+.subheader {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* Make the grid feel like a poster wall */
+.Review_Card {
+    padding: 26px 18px 40px;
+    gap: 26px;
+    perspective: 1100px;
+}
+
+/* Each item becomes a "poster sleeve" */
+.Review_Card > * {
     position: relative;
     padding: 14px 12px 16px;
     border-radius: 18px;
@@ -69,6 +189,24 @@ body {
     transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
+/* Subtle "glass sheen" */
+.Review_Card > *::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    pointer-events: none;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.65) 0%,
+        rgba(255,255,255,0.18) 28%,
+        rgba(255,255,255,0.00) 58%
+    );
+    opacity: 0.25;
+    transition: opacity 180ms ease;
+}
+
+/* Edge vignette to feel like a sleeve */
 .Review_Card > *::before {
     content: "";
     position: absolute;
@@ -77,17 +215,6 @@ body {
     pointer-events: none;
     box-shadow: inset 0 0 0 1px rgba(0,0,0,0.10);
     opacity: 0.9;
-}
-
-.Review_Card > *::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 18px;
-    pointer-events: none;
-    background: linear-gradient(135deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.18) 28%, rgba(255,255,255,0.00) 58%);
-    opacity: 0.25;
-    transition: opacity 180ms ease;
 }
 
 .Review_Card > *:hover {
@@ -105,12 +232,12 @@ body {
     opacity: 0.55;
 }
 
+/* Movie posters: tall ratio + cinematic shadow */
 .Review_Card img {
-    width: 100%;
     max-width: 225px;
+    width: 100%;
     aspect-ratio: 2 / 3;
     object-fit: cover;
-    display: block;
     border-radius: 14px;
     box-shadow:
         0 18px 36px rgba(0,0,0,0.28),
@@ -118,21 +245,7 @@ body {
     transform: translateZ(26px);
 }
 
-.Review_Card a {
-    margin-top: 10px;
-    color: black;
-    text-decoration: none;
-    font-weight: normal;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.4;
-    text-align: center;
-}
-
-.Review_Card a:hover {
-    text-decoration: underline;
-}
-
+/* If your image is wrapped in a link, make the whole cover feel clickable */
 .Review_Card a:has(img) {
     display: block;
     width: 100%;
@@ -160,6 +273,7 @@ body {
     outline-offset: 6px;
 }
 
+/* Title/link under the poster becomes a pill label */
 .Review_Card a:not(:has(img)) {
     margin-top: 12px;
     padding: 9px 12px;
@@ -175,21 +289,8 @@ body {
     background: rgba(219,184,255,0.75);
 }
 
-label[for="sortOrder"] {
-    display: inline-block;
-    margin: 12px 8px 0 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
+/* Sort dropdown: match the "premium" feel */
 #sortOrder {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 6px 28px 6px 10px;
-    font: 14px Arial, sans-serif;
-    border: 1.5px solid black;
-    border-radius: 8px;
-    background: #DBB8FF;
-    cursor: pointer;
     box-shadow:
         0 10px 18px rgba(0,0,0,0.10),
         inset 0 0 0 1px rgba(255,255,255,0.22);
@@ -204,37 +305,9 @@ label[for="sortOrder"] {
     outline-offset: 3px;
 }
 
+/* Mobile tweaks (keeps the poster vibe without the heavy tilt) */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 5px;
-        text-align: center;
-    }
-
-    .Header_Image {
-        transform: scale(1);
-        margin-bottom: 10px;
-    }
-
-    .Header_Title {
-        width: auto;
-        height: auto;
-        font-size: medium;
-    }
-
-    .subheader {
-        justify-content: space-around;
-        padding: 5px 0;
-    }
-
-    .subheader a {
-        font-size: 14px;
-        padding: 5px;
-        display: inline;
-    }
-
     .Review_Card {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         padding: 18px 12px 28px;
         gap: 16px;
     }
@@ -248,22 +321,12 @@ label[for="sortOrder"] {
     }
 
     .Review_Card img {
-        max-width: none;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
     }
 
     .Review_Card a:has(img) {
-        max-width: 260px;
-    }
-
-    label[for="sortOrder"] {
-        margin: 8px 6px 0 8px;
-        font-size: 14px;
-    }
-
-    #sortOrder {
         width: 100%;
-        max-width: 240px;
-        margin: 6px 8px 0 8px;
-        font-size: 14px;
+        max-width: 260px;
     }
 }
