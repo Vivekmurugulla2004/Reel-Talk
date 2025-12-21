@@ -60,6 +60,29 @@ body {
     margin-bottom: 20px;
 }
 
+label[for="sortOrder"] {
+  display: inline-block;
+  margin: 12px 8px 0 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#sortOrder {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 28px 6px 10px;
+  font: 14px Arial, sans-serif;
+  border: 1.5px solid black;
+  border-radius: 8px;
+  background: #DBB8FF;
+  cursor: pointer;
+}
+
+#sortOrder:focus {
+  outline: 2px solid #CF9FFF;
+  outline-offset: 2px;
+}
+
+
 
 @media (max-width: 768px) {
     header {
