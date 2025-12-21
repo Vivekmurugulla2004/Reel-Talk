@@ -1,0 +1,93 @@
+.Review_Card.games-grid img {
+  width: 100%;
+  max-width: 225px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.Review_Card.games-grid > div {
+  gap: 10px;
+  align-items: center;
+}
+
+.Review_Card.games-grid .cover-link {
+  position: relative;
+  display: block;
+  width: 225px;
+  padding: 38px 10px 10px;
+  border-radius: 16px;
+  border: 2px solid #0b2d7a;
+  background: linear-gradient(to bottom, #f7f7f7 0%, #ffffff 40%, #f0f0f0 100%);
+  box-shadow:
+    0 14px 26px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+  transform: translateZ(0);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.Review_Card.games-grid .cover-link::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  height: 22px;
+  border-radius: 12px;
+  background: linear-gradient(to right, #0b2d7a 0%, #2f6bff 55%, #0b2d7a 100%);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.Review_Card.games-grid .cover-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.50) 0%,
+    rgba(255, 255, 255, 0.12) 28%,
+    rgba(255, 255, 255, 0.00) 55%
+  );
+  opacity: 0.35;
+  transition: opacity 160ms ease;
+}
+
+.Review_Card.games-grid .cover-link img {
+  max-width: none;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+
+.Review_Card.games-grid .cover-link:hover {
+  transform: translateY(-7px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+  border-color: #2f6bff;
+  box-shadow:
+    0 22px 44px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.Review_Card.games-grid .cover-link:hover::after {
+  opacity: 0.55;
+}
+
+.Review_Card.games-grid .cover-link:focus-visible {
+  outline: 3px solid #CF9FFF;
+  outline-offset: 5px;
+}
+
+@media only screen and (max-width: 750px) {
+  .Review_Card.games-grid .cover-link {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .Review_Card.games-grid img {
+    max-width: none;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+  }
+}
