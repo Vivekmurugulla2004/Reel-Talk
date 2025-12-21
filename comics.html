@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reel Talk</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/reviews.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-07DEE9B5DF');
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.querySelector('.Review_Card');
+  if (!grid) return;
+
+  const bar = document.createElement('div');
+  bar.style.margin = '1rem 0';
+  bar.innerHTML = `
+    <label for="sortOrder">Sort:</label>
+    <select id="sortOrder">
+      <option value="az">A → Z</option>
+      <option value="za">Z → A</option>
+    </select>
+  `;
+  grid.parentNode.insertBefore(bar, grid);
+
+  function sortKey(card) {
+    const links = card.querySelectorAll('a');
+    const titleLink = links[links.length - 1];
+    const raw = titleLink ? titleLink.textContent : '';
+    return raw.replace(/\s*\(\d{4}\)\s*$/, '').trim().toLowerCase().replace(/^(the|a|an)\s+/, '');
+  }
+
+  function sortCards(order) {
+    const cards = Array.from(grid.children);
+    cards.sort((a, b) => {
+      const ta = sortKey(a);
+      const tb = sortKey(b);
+      return order === 'az' ? ta.localeCompare(tb) : tb.localeCompare(ta);
+    });
+    grid.append(...cards);
+  }
+
+  document.getElementById('sortOrder').addEventListener('change', e => {
+    sortCards(e.target.value);
+  });
+
+  sortCards('az');
+});
+</script>
+<body>
+    <header>
+        <div class="Header_Image">  
+            <img src="Images/Main/Reel Talk Logo Clear.png" alt="Reel Talk Logo" width="100" height="auto"/>
+        </div>
+        <div class="Header_Title">
+            <h1>
+                Your Film Guide
+            </h1>
+        </div>
+    </header>
+    <nav class="subheader">
+        <a href="index.html">Home</a>
+        <a href="reviews.html">Movie Reviews</a>
+        <a href="games.html">Game Reviews</a>
+        <a href="comics.html">Comic Reviews</a>
+        <a href="articles.html">Commentary</a>
+    </nav>
+    <div class="Review_Card">
+        <div class="p5_review">
+            <a href="Games/p5r.html"> <img src="Images/Game/Cover/P5R_Key_Art.webp" width="225" height="337.50"></a> 
+            <a href="Games/p5r.html">Persona 5 Royal (2020)</a>
+        </div>
+        <div class="p5_review">
+            <a href="Games/sps4.html"> <img src="Images/Game/Cover/spider-man ps4.webp" width="225" height="337.50"></a> 
+            <a href="Games/sps4.html">Marvel's Spider-Man (2018)</a>
+        </div>        
+    </div>
+</body>
+</html>
