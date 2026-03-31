@@ -20,57 +20,111 @@ body {
 .subheader a {
     display: block;
     color: black;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+.subheader a:hover {
+    background: rgba(0, 0, 0, 0.08);
 }
 .subheader {
     display: flex;
     justify-content: space-evenly;
-    background: linear-gradient(to right, #e2e2e2 0%,  #DBB8FF 4%, #DBB8FF 96%, #e2e2e2 100%);    
+    background: linear-gradient(to right, #e2e2e2 0%,  #DBB8FF 4%, #DBB8FF 96%, #e2e2e2 100%);
     border-bottom: 2px solid black;
     border-top: 2px solid black;
 }
-h1 {
+
+/* Review title */
+.movie-review h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.4rem;
     text-align: center;
-    margin-bottom: 4px;
+    margin-top: 36px;
+    margin-bottom: 8px;
+    padding: 0 16px;
+    line-height: 1.2;
 }
-h3{
+
+/* Tagline / subtitle */
+.movie-review h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
     font-weight: normal;
+    font-size: 1.15rem;
     text-align: center;
-    margin-top: 0px;
-    margin-bottom: 4px;
+    margin-top: 0;
+    margin-bottom: 6px;
+    color: #444;
+    padding: 0 16px;
 }
-h4 {
-   text-align: center;
-   margin-bottom: 4px;
-   font-weight: normal;
-   text-align: center;
-   margin-top: 0px; 
+
+/* Metadata line (genre · runtime · rating · year) */
+.movie-review h4 {
+    font-size: 0.8rem;
+    font-weight: normal;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #CF9FFF;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 16px;
 }
+
+/* Hero image */
 .movie-review img {
     display: block;
-    margin: auto;
+    margin: 0 auto 28px;
+    max-width: 860px;
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* Pull quotes */
 .top_quote {
-    text-align: center;
-    font-size: large;
-    font-weight: bolder;
-    margin-top: 10px; 
-    margin-bottom: 20px;
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: normal;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 24px;
+    padding: 14px 20px;
+    border-left: 4px solid #CF9FFF;
+    background: rgba(219, 184, 255, 0.18);
+    line-height: 1.6;
+    border-radius: 0 4px 4px 0;
 }
 .bottom_quote {
-    text-align: center;
-    font-size: large;
-    font-weight: bolder;
-    margin-top: 0px; 
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: normal;
+    text-align: left;
+    max-width: 800px;
+    margin: 24px auto 32px;
+    padding: 14px 20px;
+    border-left: 4px solid #CF9FFF;
+    background: rgba(219, 184, 255, 0.18);
+    line-height: 1.6;
+    border-radius: 0 4px 4px 0;
 }
+
+/* Body text */
 .review-paragraph {
     text-align: justify;
-    max-width: 1000px;
-    margin: auto;
+    max-width: 800px;
+    margin: 0 auto 24px;
     font-size: larger;
-    margin-top: 0px; 
-    margin-bottom: 20px;
+    line-height: 1.8;
 }
 
 @media (max-width: 768px) {
@@ -92,20 +146,28 @@ h4 {
     }
 
     .subheader {
-        display: flex;
         justify-content: space-around;
-        padding: 5px 0;       
+        flex-wrap: wrap;
+        padding: 4px 0;
     }
 
     .subheader a {
-        font-size: 14px;
-        padding: 5px;
+        font-size: 13px;
+        padding: 7px 10px;
         display: inline;
     }
 
+    .movie-review h1 {
+        font-size: 1.7rem;
+    }
+
+    .movie-review h3 {
+        font-size: 1rem;
+    }
+
     .movie-review img {
-        max-width: 300px;
-        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     }
 
     .review-paragraph {
@@ -113,17 +175,11 @@ h4 {
         font-size: medium;
     }
 
-    .top_quote {
+    .top_quote, .bottom_quote {
         font-size: 0.95rem;
-        line-height: 1.4;
-        padding: 0 12px;
-        word-wrap: break-word;
-    }
-    .bottom_quote {
-        font-size: 0.95rem;
-        line-height: 1.4;
-        padding: 0 12px;
-        word-wrap: break-word;
+        line-height: 1.5;
+        margin: 16px 12px;
+        padding: 10px 14px;
     }
 
 }

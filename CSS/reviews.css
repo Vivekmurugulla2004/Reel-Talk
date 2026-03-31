@@ -20,21 +20,32 @@ body {
 .subheader a {
     display: block;
     color: black;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+.subheader a:hover {
+    background: rgba(0, 0, 0, 0.08);
 }
 .subheader {
     display: flex;
     justify-content: space-evenly;
-    background: linear-gradient(to right, #e2e2e2 0%,  #DBB8FF 4%, #DBB8FF 96%, #e2e2e2 100%);    
+    background: linear-gradient(to right, #e2e2e2 0%,  #DBB8FF 4%, #DBB8FF 96%, #e2e2e2 100%);
     border-bottom: 2px solid black;
     border-top: 2px solid black;
 }
 
 .Review_Card {
     display: grid;
-    gap: 30px;
-    padding: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    gap: 32px;
+    padding: 24px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .Review_Card > * {
@@ -44,27 +55,58 @@ body {
     text-align: center;
 }
 
-.Review_Card img {
-    width: 100%;
-    max-width: 225px;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
+/* Image link wrapper — enables overlay and scale */
+.Review_Card > div > a:first-child {
+    position: relative;
     display: block;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.22);
+    width: 100%;
+    max-width: 200px;
 }
 
-.Review_Card a {
+.Review_Card > div > a:first-child::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(207, 159, 255, 0.38);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.Review_Card > div > a:first-child:hover::after {
+    opacity: 1;
+}
+
+.Review_Card img {
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.25s ease;
+}
+
+.Review_Card > div > a:first-child:hover img {
+    transform: scale(1.04);
+}
+
+/* Title link */
+.Review_Card > div > a:last-child {
     margin-top: 10px;
     color: black;
     text-decoration: none;
-    font-weight: normal;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
     line-height: 1.4;
     text-align: center;
 }
 
-.Review_Card a:hover {
-    text-decoration: underline; /* hover effect */
+.Review_Card > div > a:last-child:hover {
+    text-decoration: underline;
+    color: #6a0dad;
 }
 
 label[for="sortOrder"] {
@@ -111,25 +153,32 @@ label[for="sortOrder"] {
     .subheader {
         display: flex;
         justify-content: space-around;
-        padding: 5px 0;       
+        flex-wrap: wrap;
+        padding: 4px 0;
     }
 
     .subheader a {
-        font-size: 14px;
-        padding: 5px;
+        font-size: 13px;
+        padding: 7px 10px;
         display: inline;
     }
 
     .Review_Card {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 16px;
+        padding: 16px 12px;
     }
+
     .Review_Card img {
         width: 100%;
         max-width: none;
-        height: auto;
-        aspect-ratio: auto;
-        object-fit: contain;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+    }
+
+    .Review_Card > div > a:first-child {
+        max-width: none;
+        width: 100%;
     }
 
     label[for="sortOrder"] {

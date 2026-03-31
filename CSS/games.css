@@ -96,6 +96,22 @@
   outline-offset: 5px;
 }
 
+/* Game title links */
+.Review_Card.games-grid > div > a:last-child {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.Review_Card.games-grid > div > a:last-child:hover {
+    text-decoration: underline;
+    color: #6a0dad;
+}
+
 @media only screen and (max-width: 750px) {
   .Review_Card.games-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
