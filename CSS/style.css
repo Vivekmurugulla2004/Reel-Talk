@@ -191,13 +191,13 @@ label[for="sortOrder"] {
     }
 
     .about-paragraph {
-        padding: 0 15px;
+        padding: 0 5%;
         font-size: medium;
     }
 
     .about-list {
-    padding-left: 25px;
-    margin: 10px 15px;
+        padding-left: 5%;
+        margin: 10px 5%;
     }
 
     .about-list li {

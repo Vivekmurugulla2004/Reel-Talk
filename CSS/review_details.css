@@ -208,19 +208,20 @@ body {
     }
 
     .movie-review img {
+        width: 80%;
         border-radius: 4px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     }
 
     .review-paragraph {
-        padding: 0 15px;
+        padding: 0 5%;
         font-size: medium;
     }
 
     .top_quote, .bottom_quote {
         font-size: 0.95rem;
         line-height: 1.5;
-        margin: 16px 12px;
+        margin: 16px 5%;
         padding: 10px 14px;
     }
 

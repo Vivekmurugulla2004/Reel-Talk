@@ -148,12 +148,13 @@ body {
     }
 
     .article img {
+        width: 80%;
         border-radius: 4px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     }
 
     .article-paragraph {
-        padding: 0 15px;
+        padding: 0 5%;
         font-size: medium;
     }
 }
