@@ -39,6 +39,11 @@ body {
     background: #DBB8FF;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+    display: none;
+}
 .about h1 {
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -102,33 +107,78 @@ label[for="sortOrder"] {
 
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        padding: 5px;
-        text-align: center;
+        padding: 8px 16px;
+        justify-content: center;
+        gap: 10px;
     }
 
     .Header_Image {
         transform: scale(1);
-        margin-bottom: 10px;
+    }
+
+    .Header_Image img {
+        width: 72px;
     }
 
     .Header_Title {
         width: auto;
         height: auto;
-        font-size: medium;
+        font-size: small;
+    }
+
+    /* Hamburger button */
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        padding: 12px 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        flex-shrink: 0;
+        margin-right: 4px;
+    }
+
+    .nav-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: black;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .nav-toggle.nav-open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .nav-toggle.nav-open span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.nav-open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
     }
 
     .subheader {
-        display: flex;
-        justify-content: space-around;
         flex-wrap: wrap;
-        padding: 4px 0;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
     }
 
+    /* Links hidden until menu is open */
     .subheader a {
-        font-size: 13px;
-        padding: 7px 10px;
-        display: inline;
+        display: none;
+        width: 100%;
+        padding: 13px 20px;
+        font-size: 15px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    .subheader.nav-open a {
+        display: block;
     }
 
     .about img {
