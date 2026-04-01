@@ -114,17 +114,30 @@
 
 @media only screen and (max-width: 750px) {
   .Review_Card.games-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
-    gap: 16px;
-    padding: 16px 5% !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: auto !important;
+    max-width: none !important;
+    box-sizing: border-box;
+    gap: 12px;
+    padding: 16px 5%;
+  }
+
+  .Review_Card.games-grid > div {
+    max-width: none;
+    width: 100%;
   }
 
   .Review_Card.games-grid .cover-link {
     width: 100%;
     max-width: none;
+    box-sizing: border-box;
   }
 
   .Review_Card.games-grid img {
+    width: 100%;
     max-width: none;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
   }
 }
