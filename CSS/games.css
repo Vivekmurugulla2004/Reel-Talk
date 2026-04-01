@@ -114,13 +114,14 @@
 
 @media only screen and (max-width: 750px) {
   .Review_Card.games-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+    gap: 16px;
+    padding: 16px 5% !important;
   }
 
   .Review_Card.games-grid .cover-link {
     width: 100%;
-    max-width: 240px;
+    max-width: none;
   }
 
   .Review_Card.games-grid img {
