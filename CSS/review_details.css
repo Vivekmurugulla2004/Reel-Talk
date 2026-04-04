@@ -119,6 +119,140 @@ body {
     border-radius: 0 4px 4px 0;
 }
 
+/* OMDB info block */
+.omdb-info {
+    max-width: 800px;
+    margin: 0 auto 24px;
+    padding: 16px 20px;
+    background: rgba(219, 184, 255, 0.18);
+    border-radius: 8px;
+    border: 1px solid rgba(207, 159, 255, 0.45);
+}
+
+.omdb-ratings {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.rating-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.rating-badge.imdb     { background: #f5c518; color: #000; }
+.rating-badge.rt       { background: #fa320a; color: #fff; }
+.rating-badge.meta     { background: #54a72d; color: #fff; }
+
+.omdb-meta {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+
+.trailer-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 18px;
+    background: #CF9FFF;
+    color: black;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.88rem;
+    font-family: Arial, sans-serif;
+    transition: background 0.15s ease;
+}
+
+.trailer-btn:hover {
+    background: #b87fff;
+}
+
+/* Where to Watch section */
+.where-to-watch {
+    max-width: 800px;
+    margin: 32px auto 16px;
+    padding: 20px;
+    border-top: 2px solid #CF9FFF;
+}
+
+.wtw-label {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 12px;
+}
+
+.wtw-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.wtw-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-family: Arial, sans-serif;
+    color: white;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.wtw-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.wtw-note {
+    font-weight: 400;
+    font-size: 0.78rem;
+    opacity: 0.85;
+}
+
+.wtw-btn.netflix    { background: #E50914; }
+.wtw-btn.prime      { background: #00A8E0; }
+.wtw-btn.disney     { background: #113CCF; }
+.wtw-btn.max        { background: #5822b4; }
+.wtw-btn.appletv    { background: #1c1c1e; }
+.wtw-btn.paramount  { background: #0064FF; }
+.wtw-btn.hulu       { background: #1a9a5c; }
+.wtw-btn.peacock    { background: #000000; }
+
+@media (max-width: 768px) {
+    .where-to-watch {
+        margin: 24px 5% 16px;
+        padding: 16px;
+    }
+
+    .wtw-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .wtw-btn {
+        text-align: center;
+        padding: 12px 8px;
+        font-size: 0.85rem;
+    }
+}
+
 /* Body text */
 .review-paragraph {
     text-align: justify;
