@@ -78,6 +78,51 @@ body {
     margin-bottom: 20px;
 }
 
+/* Recent reviews grid */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+/* Recent review cards */
+.review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.review-card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 6px;
+    display: block;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.review-card img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.review-card-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.9rem;
+    color: #333;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.review-card-title:hover {
+    color: #7B2FBE;
+    text-decoration: underline;
+}
+
 /* Streaming affiliate grid */
 .streaming-grid {
     display: grid;
@@ -240,6 +285,11 @@ label[for="sortOrder"] {
     }
 
     .streaming-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 5%;
+    }
+
+    .reviews-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 0 5%;
     }
