@@ -198,31 +198,35 @@ body {
 
 .wtw-links {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .wtw-btn {
-    display: inline-block;
-    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 52px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    font-family: Arial, sans-serif;
-    color: white;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
+    overflow: hidden;
+    padding: 10px 16px;
 }
 
 .wtw-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
-.wtw-note {
-    font-weight: 400;
-    font-size: 0.78rem;
-    opacity: 0.85;
+.wtw-logo {
+    height: 26px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .wtw-btn.netflix    { background: #E50914; }
@@ -242,14 +246,18 @@ body {
 
     .wtw-links {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
     }
 
     .wtw-btn {
-        text-align: center;
-        padding: 12px 8px;
-        font-size: 0.85rem;
+        width: 100%;
+        height: 48px;
+        padding: 10px 12px;
+    }
+
+    .wtw-logo {
+        height: 22px;
     }
 }
 

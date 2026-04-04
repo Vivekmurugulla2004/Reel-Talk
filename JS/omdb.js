@@ -3,15 +3,16 @@
 const OMDB_API_KEY = 'cbf175fb';
 
 // Streaming platform registry — add new platforms here as needed
+// logo: Simple Icons CDN slug (https://simpleicons.org)
 const PLATFORMS = {
-    netflix:   { name: 'Netflix',    url: 'https://www.netflix.com',        cls: 'netflix'   },
-    prime:     { name: 'Prime Video',url: 'https://www.primevideo.com',     cls: 'prime'     },
-    disney:    { name: 'Disney+',    url: 'https://www.disneyplus.com',     cls: 'disney'    },
-    max:       { name: 'Max',        url: 'https://www.max.com',            cls: 'max'       },
-    hulu:      { name: 'Hulu',       url: 'https://www.hulu.com',           cls: 'hulu'      },
-    appletv:   { name: 'Apple TV',   url: 'https://tv.apple.com',           cls: 'appletv'   },
-    paramount: { name: 'Paramount+', url: 'https://www.paramountplus.com',  cls: 'paramount' },
-    peacock:   { name: 'Peacock',    url: 'https://www.peacocktv.com',      cls: 'peacock'   },
+    netflix:   { name: 'Netflix',     url: 'https://www.netflix.com',       cls: 'netflix',   logo: 'netflix'       },
+    prime:     { name: 'Prime Video', url: 'https://www.primevideo.com',    cls: 'prime',     logo: 'primevideo'    },
+    disney:    { name: 'Disney+',     url: 'https://www.disneyplus.com',    cls: 'disney',    logo: 'disneyplus'    },
+    max:       { name: 'Max',         url: 'https://www.max.com',           cls: 'max',       logo: 'max'           },
+    hulu:      { name: 'Hulu',        url: 'https://www.hulu.com',          cls: 'hulu',      logo: 'hulu'          },
+    appletv:   { name: 'Apple TV',    url: 'https://tv.apple.com',          cls: 'appletv',   logo: 'appletv'       },
+    paramount: { name: 'Paramount+',  url: 'https://www.paramountplus.com', cls: 'paramount', logo: 'paramountplus' },
+    peacock:   { name: 'Peacock',     url: 'https://www.peacocktv.com',     cls: 'peacock',   logo: 'peacock'       },
 };
 
 document.addEventListener('DOMContentLoaded', async function () {
@@ -44,7 +45,7 @@ function insertWhereToWatch(article, streamingAttr) {
 
     const buttons = keys.map(key => {
         const p = PLATFORMS[key];
-        return `<a href="${p.url}" target="_blank" rel="noopener" class="wtw-btn ${p.cls}">${p.name}</a>`;
+        return `<a href="${p.url}" target="_blank" rel="noopener" class="wtw-btn ${p.cls}" aria-label="Watch on ${p.name}">${p.name}</a>`;
     }).join('');
 
     const html = `
