@@ -71,11 +71,28 @@
 
 .rank-entry {
     display: grid;
-    grid-template-columns: 56px 1fr;
-    gap: 0 24px;
+    grid-template-columns: 48px 100px 1fr;
+    gap: 0 20px;
     border-top: 1px solid #e5d4f7;
     padding: 32px 0;
     align-items: start;
+}
+
+.rank-poster {
+    width: 100px;
+    aspect-ratio: 2 / 3;
+    border-radius: 4px;
+    background: #f0e6ff;
+    overflow: hidden;
+    border: 1px solid #e5d4f7;
+}
+
+.rank-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
 }
 
 .rank-entry:last-child {
@@ -205,12 +222,16 @@
     }
 
     .rank-entry {
-        grid-template-columns: 44px 1fr;
-        gap: 0 14px;
+        grid-template-columns: 40px 80px 1fr;
+        gap: 0 12px;
     }
 
     .rank-num {
         font-size: 2rem;
+    }
+
+    .rank-poster {
+        width: 80px;
     }
 
     .related-grid {
