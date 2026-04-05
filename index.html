@@ -17,7 +17,7 @@
 </script>
 <body>
     <header>
-        <div class="Header_Image">  
+        <div class="Header_Image">
             <img src="Images/Main/Reel Talk Logo Clear.png" alt="Reel Talk Logo" width="100" height="auto"/>
         </div>
         <div class="Header_Title">
@@ -33,51 +33,81 @@
         <a href="comics.html">Comic Reviews</a>
         <a href="articles.html">Commentary</a>
     </nav>
-    <article class="about">
-        <h1>
-            About Me
-        </h1>
-        <p class="about-paragraph">
-            Welcome to Reel Talk! This site is my personal space for reviews, analysis, and commentary on movies, games, and comics. I care deeply about storytelling, whether it comes from a big studio release, a cult favorite, or something that makes you stop and think, “What did I just watch?”
 
-            Reel Talk started as a fun creative outlet and slowly turned into something more intentional. Over time, it became a place to dig a little deeper into why stories work, why they don’t, and why some stick with us long after the credits roll. I try to approach everything here with honesty, curiosity, and just enough humor to keep things grounded.
-        </p>
-        <p class="about-paragraph">
-            Here on Reel Talk, you’ll find:
-        </p>
-        <ul class="about-list">
-            <li>Movie reviews covering both classic and contemporary films</li>
-            <li>Game reviews with a focus on narrative, design, and overall experience</li>
-            <li>Comic reviews exploring different eras, styles, and creators</li>
-            <li>Commentary, featuring articles and editorials on film, pop culture, and storytelling</li>
-        </ul>
-        <h1>
-            The Story So Far
-        </h1>
-        <p class="about-paragraph">
-            What started as a small creative experiment has grown into a long-term passion project:
-        </p>
-        <ul class="about-list">
-            <li>2023: Began writing about films purely for fun and to organize my thoughts</li>
-            <li>2024: Refined my voice and structure, expanding into games and comics</li>
-            <li>2025: Built this website from scratch to give all my writing a permanent home</li>
-            <li>2026: Continues to evolve as an ongoing, independent project</li>
-        </ul>
-        <h1>
-            My Background
-        </h1>
-        <p class="about-paragraph">
-            I graduated from college in December 2025 with a degree in Management Information Systems. While that may not sound directly related to movies, it shapes how I approach this site, balancing structure with creativity. Everything on Reel Talk, from the design to the writing, is created and maintained by me and is meant to keep improving over time.  
-        </p>
-        <p class="about-paragraph">
-            When I’m not watching something new or working on the site, I’m focused on sharpening my skills in web development, design, and digital content creation.
-        </p>
-        <h1>
-            Start Streaming
-        </h1>
-        <p class="about-paragraph">
-            New to streaming or looking to sign up? The major services are all below. Some links support Reel Talk at no extra cost to you.
-        </p>
+    <!-- Intro -->
+    <section class="site-intro">
+        <p>Reel Talk features movie, game, and comic reviews focused on storytelling, themes, and what makes them work.</p>
+    </section>
+
+    <!-- Recent Reviews -->
+    <section class="home-section">
+        <h2 class="section-heading">Recent Reviews</h2>
+        <!-- Recent reviews: update JS/reviews.js to add new entries -->
+        <div id="reviews-container" class="reviews-grid">
+            <!-- filled by JS/reviews.js -->
+        </div>
+        <div class="section-cta">
+            <a href="reviews.html" class="cta-link">See all reviews →</a>
+        </div>
+    </section>
+
+    <!-- Start Here -->
+    <section class="home-section">
+        <h2 class="section-heading">Start Here</h2>
+        <div class="start-here-grid">
+            <a href="reviews.html" class="start-here-card">
+                <span class="start-here-icon">🎬</span>
+                <span class="start-here-title">Movies</span>
+                <span class="start-here-desc">Reviews covering blockbusters, cult classics, and everything in between.</span>
+            </a>
+            <a href="games.html" class="start-here-card">
+                <span class="start-here-icon">🎮</span>
+                <span class="start-here-title">Games</span>
+                <span class="start-here-desc">Game reviews focused on narrative, design, and overall experience.</span>
+            </a>
+            <a href="comics.html" class="start-here-card">
+                <span class="start-here-icon">📖</span>
+                <span class="start-here-title">Comics</span>
+                <span class="start-here-desc">Exploring different eras, styles, and the creators behind them.</span>
+            </a>
+            <a href="articles.html" class="start-here-card">
+                <span class="start-here-icon">✍️</span>
+                <span class="start-here-title">Commentary</span>
+                <span class="start-here-desc">Essays and editorials on storytelling, pop culture, and film.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Popular Posts -->
+    <section class="home-section">
+        <h2 class="section-heading">Popular Posts</h2>
+        <div class="popular-posts-grid">
+            <a href="Articles/costume.html" class="popular-post-card">
+                <img src="Images/Article/Main/Costume Article.avif" alt="Superhero Costumes article">
+                <span class="popular-post-title">The Struggle Between Realism and Fantasy in Superhero Costumes</span>
+            </a>
+            <a href="Articles/vgm.html" class="popular-post-card">
+                <img src="Images/Article/Main/vgm article img.avif" alt="Video Games Cinema article">
+                <span class="popular-post-title">When the Controller Becomes a Script: Are Video Games the New Cinema?</span>
+            </a>
+            <a href="Articles/oz.html" class="popular-post-card">
+                <img src="Images/Article/Main/oz article img.avif" alt="AI Wizard of Oz article">
+                <span class="popular-post-title">Only a Scarecrow Would Fall for This: The AI Wizard of Oz Scam</span>
+            </a>
+            <a href="Articles/adaptation.html" class="popular-post-card">
+                <img src="Images/Article/Main/adaptation.jpg" alt="Adaptation article">
+                <span class="popular-post-title">When You Change Just To Make Some Change</span>
+            </a>
+        </div>
+        <div class="section-cta">
+            <a href="articles.html" class="cta-link">See all commentary →</a>
+        </div>
+    </section>
+
+    <!-- Start Streaming -->
+    <section class="home-section streaming-section">
+        <h2 class="section-heading">Start Streaming</h2>
+        <p class="section-subtext">New to streaming or looking to sign up? Some links support Reel Talk at no extra cost to you.</p>
         <div class="streaming-grid">
             <a href="https://www.netflix.com/signup" target="_blank" rel="noopener" class="streaming-card netflix">
                 <span class="service-name">Netflix</span>
@@ -104,26 +134,17 @@
                 <span class="service-cta">Try Free →</span>
             </a>
         </div>
+    </section>
 
-        <h1>
-            Recent Reviews
-        </h1>
-        <!-- Recent reviews: update JS/reviews.js to add new entries -->
-        <div id="reviews-container" class="reviews-grid">
-            <!-- filled by JS/reviews.js -->
-        </div>
-
-        <h1>
-            Let's Connect
-        </h1>
-        <p class="about-paragraph">
-            You can find more of my work here:
-        </p>
-        <ul class="about-list">
-            <li>🎬 Letterboxd Reviews: <a href="https://boxd.it/4HvP3">Letterboxd Reviews</a></li>
-            <li>📷 Instagram: <a href="https://www.instagram.com/reeltalk_hub">Insta Account</a></li>
+    <!-- Let's Connect -->
+    <footer class="site-footer">
+        <p class="footer-text">Find more of my work:</p>
+        <ul class="footer-links">
+            <li>🎬 <a href="https://boxd.it/4HvP3">Letterboxd</a></li>
+            <li>📷 <a href="https://www.instagram.com/reeltalk_hub">Instagram</a></li>
         </ul>
-    </article>
+    </footer>
+
 <script src="JS/reviews.js"></script>
 <script src="JS/nav.js"></script>
 </body>

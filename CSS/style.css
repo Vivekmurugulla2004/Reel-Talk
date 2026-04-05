@@ -78,6 +78,198 @@ body {
     margin-bottom: 20px;
 }
 
+/* Homepage sections */
+.site-intro {
+    max-width: 800px;
+    margin: 32px auto 8px;
+    padding: 0 24px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.7;
+}
+
+.home-section {
+    max-width: 1200px;
+    margin: 0 auto 56px;
+    padding: 0 24px;
+}
+
+.section-heading {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #CF9FFF;
+}
+
+.section-subtext {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.95rem;
+    color: #555;
+    margin: -10px 0 16px;
+}
+
+.section-cta {
+    text-align: right;
+    margin-top: 12px;
+}
+
+.cta-link {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #7B2FBE;
+    text-decoration: none;
+}
+
+.cta-link:hover {
+    text-decoration: underline;
+}
+
+/* Start Here cards */
+.start-here-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.start-here-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f0e6ff;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.start-here-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.start-here-icon {
+    font-size: 1.6rem;
+}
+
+.start-here-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.start-here-desc {
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Popular Posts */
+.popular-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.popular-post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.popular-post-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.popular-post-card img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.popular-post-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.88rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.popular-post-card:hover .popular-post-title {
+    color: #7B2FBE;
+    text-decoration: underline;
+}
+
+/* Review card category label and description */
+.review-card-category {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7B2FBE;
+}
+
+.review-card-desc {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.82rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Footer */
+.site-footer {
+    background: #1a1a1a;
+    color: #ccc;
+    padding: 28px 24px;
+    text-align: center;
+}
+
+.footer-text {
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    margin: 0 0 10px;
+    color: #aaa;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: #DBB8FF;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.streaming-section {
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 24px;
+}
+
 /* Recent reviews grid */
 .reviews-grid {
     display: grid;
@@ -291,7 +483,19 @@ label[for="sortOrder"] {
 
     .reviews-grid {
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 5%;
+        padding: 0;
+    }
+
+    .start-here-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .popular-posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-section {
+        padding: 0 16px;
     }
 
     .about-list {
