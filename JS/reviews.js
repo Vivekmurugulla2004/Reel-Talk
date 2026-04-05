@@ -1,44 +1,62 @@
 // Reads from JS/reviews-data.js — add new reviews there.
-// Shows the 6 most recent entries (sorted by date) in the carousel.
+// Shows the 6 most recent entries (by date) in the carousel.
 
 const recentReviews = [...allReviews]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 6);
 
-const track     = document.getElementById('carousel-track');
-const titleEl   = document.getElementById('carousel-title');
-const descEl    = document.getElementById('carousel-desc');
-const linkEl    = document.getElementById('carousel-link');
-const categoryEl= document.getElementById('carousel-category');
+const track    = document.getElementById('carousel-track');
+const dotsEl   = document.getElementById('carousel-dots');
+const prevBtn  = document.querySelector('.carousel-prev');
+const nextBtn  = document.querySelector('.carousel-next');
 
-recentReviews.forEach(review => {
-    const card = document.createElement('div');
-    card.className = 'carousel-card';
-    card.innerHTML = `
-        <a href="${review.url}">
-            <img src="${review.poster}" alt="${review.title} poster">
-        </a>
+// Build slides
+recentReviews.forEach((review, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'carousel-slide';
+    slide.innerHTML = `
+        <img src="${review.reviewImage}" alt="${review.title}">
+        <div class="carousel-slide-overlay">
+            <span class="slide-category">${review.type}</span>
+            <h3 class="slide-title">${review.title}</h3>
+            <p class="slide-desc">${review.desc}</p>
+            <a href="${review.url}" class="slide-link">Read Review →</a>
+        </div>
     `;
-    track.appendChild(card);
+    track.appendChild(slide);
+
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(dot);
 });
 
-const prevBtn  = document.querySelector('.prev-btn');
-const nextBtn  = document.querySelector('.next-btn');
-const maxIndex = recentReviews.length - 1;
 let currentIndex = 0;
+let autoTimer;
 
-function updateCarousel() {
-    track.style.transform = `translateX(-${currentIndex * 225}px)`;
-    const r = recentReviews[currentIndex];
-    titleEl.textContent    = r.title;
-    descEl.textContent     = r.desc;
-    linkEl.href            = r.url;
-    categoryEl.textContent = r.type;
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex >= maxIndex;
+function goTo(index) {
+    currentIndex = (index + recentReviews.length) % recentReviews.length;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === currentIndex);
+    });
 }
 
-prevBtn.addEventListener('click', () => { if (currentIndex > 0)        { currentIndex--; updateCarousel(); } });
-nextBtn.addEventListener('click', () => { if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); } });
+function startAuto() {
+    autoTimer = setInterval(() => goTo(currentIndex + 1), 10000);
+}
 
-updateCarousel();
+function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+}
+
+prevBtn.addEventListener('click', () => { goTo(currentIndex - 1); resetAuto(); });
+nextBtn.addEventListener('click', () => { goTo(currentIndex + 1); resetAuto(); });
+
+// Pause on hover
+track.parentElement.addEventListener('mouseenter', () => clearInterval(autoTimer));
+track.parentElement.addEventListener('mouseleave', startAuto);
+
+startAuto();
