@@ -39,27 +39,14 @@
         <p>Reel Talk features movie, game, and comic reviews focused on storytelling, themes, and what makes them work.</p>
     </section>
 
-    <!-- Recent Reviews -->
-    <section class="home-section">
-        <h2 class="section-heading">Recent Reviews</h2>
-        <!-- Recent reviews: add new entries to JS/reviews-data.js — carousel updates automatically -->
-        <div class="carousel-wrapper">
-            <div class="carousel-viewport">
-                <div class="carousel-track" id="carousel-track"></div>
-            </div>
-            <div class="carousel-info" id="carousel-info">
-                <span class="carousel-info-category" id="carousel-category">Movie Review</span>
-                <p class="carousel-info-title" id="carousel-title"></p>
-                <p class="carousel-info-desc" id="carousel-desc"></p>
-                <a class="carousel-info-link" id="carousel-link" href="#">Read Review →</a>
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev-btn" aria-label="Previous">&#8249;</button>
-                    <button class="carousel-btn next-btn" aria-label="Next">&#8250;</button>
-                </div>
-            </div>
-        </div>
-        <div class="section-cta">
-            <a href="reviews.html" class="cta-link">See all reviews →</a>
+    <!-- Recent Reviews Carousel -->
+    <!-- Add new entries to JS/reviews-data.js — this updates automatically -->
+    <section class="reviews-carousel-section">
+        <div class="carousel-hero-wrapper">
+            <div class="carousel-hero-track" id="carousel-track"></div>
+            <button class="carousel-hero-btn carousel-prev" aria-label="Previous">&#8249;</button>
+            <button class="carousel-hero-btn carousel-next" aria-label="Next">&#8250;</button>
+            <div class="carousel-dots" id="carousel-dots"></div>
         </div>
     </section>
 
