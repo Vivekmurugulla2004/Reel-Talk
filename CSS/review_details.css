@@ -207,6 +207,8 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    color: #fff;
+    text-decoration: none;
     width: 130px;
     height: 52px;
     border-radius: 8px;
