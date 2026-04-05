@@ -16,11 +16,23 @@
 
   gtag('config', 'G-07DEE9B5DF');
 </script>
+<script src="JS/reviews-data.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const grid = document.querySelector('.Review_Card');
+  const grid = document.getElementById('review-grid');
   if (!grid) return;
 
+  // Render all reviews from shared data
+  allReviews.forEach(review => {
+    const card = document.createElement('div');
+    card.innerHTML = `
+      <a href="${review.url}"><img src="${review.poster}" alt="${review.title} poster" width="225" height="337"></a>
+      <a href="${review.url}">${review.title}</a>
+    `;
+    grid.appendChild(card);
+  });
+
+  // Sort bar
   const bar = document.createElement('div');
   bar.style.margin = '1rem 0';
   bar.innerHTML = `
@@ -74,52 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="comics.html">Comic Reviews</a>
         <a href="articles.html">Commentary</a>
     </nav>
-    <div class="Review_Card">
-        <div class="mos_review">
-            <a href="Reviews/mos.html"> <img src="Images/Review/Poster/mos_poster.jpeg" width="225" height="337.50"></a> 
-            <a href="Reviews/mos.html">Man of Steel (2013)</a>
-        </div>    
-        <div class="transformers_review">
-            <a href="Reviews/transformers.html"> <img src="Images/Review/Poster/Transformers (2007).png" width="225" height="337.50"></a> 
-            <a href="Reviews/transformers.html">Transformers (2007)</a>
-        </div>
-        <div class="spider-man_review">
-            <a href="Reviews/spider-man.html"> <img src="Images/Review/Poster/spider-man poster.jpg" width="225" height="337.50"></a> 
-            <a href="Reviews/spider-man.html">Spider-Man (2002)</a>
-        </div>
-        <div class="kalki_review">
-            <a href="Reviews/kalki.html"> <img src="Images/Review/Poster/kalki poster.jpg" width="225" height="337.50"></a> 
-            <a href="Reviews/kalki.html">Kalki 2898 AD (2024)</a>
-        </div>
-        <div class="superman_review">
-            <a href="Reviews/superman.html"> <img src="Images/Review/Poster/superman poster.jpg" width="225" height="337.50"></a> 
-            <a href="Reviews/superman.html">Superman (2025)</a>
-        </div>
-        <div class="sw3_review">
-            <a href="Reviews/sw3.html"> <img src="Images/Review/Poster/sw3 poster.jpg" width="225" height="337.50"></a> 
-            <a href="Reviews/sw3.html">Star Wars: Episode III — Revenge of the Sith (2005)</a>
-        </div>
-        <div class="500dos_review">
-            <a href="Reviews/500dos.html"> <img src="Images/Review/Poster/500dos poster.png" width="225" height="337.50"></a> 
-            <a href="Reviews/500dos.html">500 Days of Summer (2009)</a>
-        </div>
-         <div class="sm2_review">
-            <a href="Reviews/sm2.html"> <img src="Images/Review/Poster/sm2 poster.jpg" width="225" height="337.50"></a> 
-            <a href="Reviews/sm2s.html">Spider-Man 2 (2004)</a>
-        </div>
-        <div class="sm3_review">
-            <a href="Reviews/sm3.html"> <img src="Images/Review/Poster/sm3 poster.webp" width="225" height="337.50"></a> 
-            <a href="Reviews/sm3.html">Spider-Man 3 (2007)</a>
-        </div>
-        <div class="bvs_review">
-            <a href="Reviews/bvs.html"> <img src="Images/Review/Poster/bvs poster.jpg" width="225" height="337.50"></a>
-            <a href="Reviews/bvs.html">Batman v. Superman: Dawn of Justice (2016)</a>
-        </div>
-        <div class="tasm_review">
-            <a href="Reviews/tasm.html"> <img src="Images/Review/Poster/tasm poster.jpg" width="225" height="337.50"></a>
-            <a href="Reviews/tasm.html">The Amazing Spider-Man (2012)</a>
-        </div>
-    </div>
+    <div class="Review_Card" id="review-grid"></div>
 <script src="JS/nav.js"></script>
 </body>
 </html>

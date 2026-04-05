@@ -42,9 +42,21 @@
     <!-- Recent Reviews -->
     <section class="home-section">
         <h2 class="section-heading">Recent Reviews</h2>
-        <!-- Recent reviews: update JS/reviews.js to add new entries -->
-        <div id="reviews-container" class="reviews-grid">
-            <!-- filled by JS/reviews.js -->
+        <!-- Recent reviews: add new entries to JS/reviews-data.js — carousel updates automatically -->
+        <div class="carousel-wrapper">
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carousel-track"></div>
+            </div>
+            <div class="carousel-info" id="carousel-info">
+                <span class="carousel-info-category" id="carousel-category">Movie Review</span>
+                <p class="carousel-info-title" id="carousel-title"></p>
+                <p class="carousel-info-desc" id="carousel-desc"></p>
+                <a class="carousel-info-link" id="carousel-link" href="#">Read Review →</a>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">&#8249;</button>
+                    <button class="carousel-btn next-btn" aria-label="Next">&#8250;</button>
+                </div>
+            </div>
         </div>
         <div class="section-cta">
             <a href="reviews.html" class="cta-link">See all reviews →</a>
@@ -145,6 +157,7 @@
         </ul>
     </footer>
 
+<script src="JS/reviews-data.js"></script>
 <script src="JS/reviews.js"></script>
 <script src="JS/nav.js"></script>
 </body>
