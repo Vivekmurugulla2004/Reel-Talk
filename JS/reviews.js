@@ -9,12 +9,13 @@ const track   = document.getElementById('carousel-track');
 const prevBtn = document.querySelector('.carousel-prev');
 const nextBtn = document.querySelector('.carousel-next');
 
-// Build slides — most recent first (index 0 = latest review)
+// Slide 0 is hardcoded in index.html for fast LCP — build slides 1–5 here
 recentReviews.forEach((review, i) => {
+    if (i === 0) return;
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
     slide.innerHTML = `
-        <img src="${review.reviewImage}" alt="${review.title}" width="1440" height="810" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}>
+        <img src="${review.reviewImage}" alt="${review.title}" width="1440" height="810" loading="lazy">
         <div class="carousel-slide-overlay">
             <span class="slide-category">${review.type}</span>
             <h3 class="slide-title">${review.title}</h3>
