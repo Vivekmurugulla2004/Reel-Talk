@@ -14,8 +14,12 @@ const nextBtn  = document.querySelector('.carousel-next');
 recentReviews.forEach((review, i) => {
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
+    // First slide: high priority (it's the LCP element). Rest: lazy load.
+    const imgAttrs = i === 0
+        ? 'fetchpriority="high"'
+        : 'loading="lazy"';
     slide.innerHTML = `
-        <img src="${review.reviewImage}" alt="${review.title}">
+        <img src="${review.reviewImage}" alt="${review.title}" width="1200" height="520" ${imgAttrs}>
         <div class="carousel-slide-overlay">
             <span class="slide-category">${review.type}</span>
             <h3 class="slide-title">${review.title}</h3>

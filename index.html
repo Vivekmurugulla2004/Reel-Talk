@@ -4,26 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reel Talk</title>
+    <meta name="description" content="Reel Talk features in-depth movie, game, and comic reviews focused on storytelling, themes, and what makes them work.">
+    <!-- Preload first carousel image so LCP is fast -->
+    <link rel="preload" as="image" href="Images/Review/Review/tasm review.jpg">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-07DEE9B5DF');
-</script>
 <body>
     <header>
         <div class="Header_Image">
-            <img src="Images/Main/Reel Talk Logo Clear.png" alt="Reel Talk Logo" width="100" height="auto"/>
+            <img src="Images/Main/Reel Talk Logo Clear.png" alt="Reel Talk Logo" width="100" height="100" style="height:auto"/>
         </div>
         <div class="Header_Title">
-            <h1>
-                All Things Screen & Play
-            </h1>
+            <h1>All Things Screen & Play</h1>
         </div>
     </header>
     <nav class="subheader">
@@ -34,108 +26,110 @@
         <a href="articles.html">Commentary</a>
     </nav>
 
-    <!-- Intro -->
-    <section class="site-intro">
-        <p>Reel Talk features movie, game, and comic reviews focused on storytelling, themes, and what makes them work.</p>
-    </section>
+    <main>
+        <!-- Intro -->
+        <section class="site-intro">
+            <p>Reel Talk features movie, game, and comic reviews focused on storytelling, themes, and what makes them work.</p>
+        </section>
 
-    <!-- Recent Reviews Carousel -->
-    <!-- Add new entries to JS/reviews-data.js — this updates automatically -->
-    <section class="reviews-carousel-section">
-        <div class="carousel-hero-wrapper">
-            <div class="carousel-hero-track" id="carousel-track"></div>
-            <button class="carousel-hero-btn carousel-prev" aria-label="Previous">&#8249;</button>
-            <button class="carousel-hero-btn carousel-next" aria-label="Next">&#8250;</button>
-            <div class="carousel-dots" id="carousel-dots"></div>
-        </div>
-    </section>
+        <!-- Recent Reviews Carousel -->
+        <!-- Add new entries to JS/reviews-data.js — this updates automatically -->
+        <section class="reviews-carousel-section" aria-label="Recent Reviews">
+            <div class="carousel-hero-wrapper">
+                <div class="carousel-hero-track" id="carousel-track"></div>
+                <button class="carousel-hero-btn carousel-prev" aria-label="Previous">&#8249;</button>
+                <button class="carousel-hero-btn carousel-next" aria-label="Next">&#8250;</button>
+                <div class="carousel-dots" id="carousel-dots"></div>
+            </div>
+        </section>
 
-    <!-- Start Here -->
-    <section class="home-section">
-        <h2 class="section-heading">Start Here</h2>
-        <div class="start-here-grid">
-            <a href="reviews.html" class="start-here-card">
-                <span class="start-here-icon">🎬</span>
-                <span class="start-here-title">Movies</span>
-                <span class="start-here-desc">Reviews covering blockbusters, cult classics, and everything in between.</span>
-            </a>
-            <a href="games.html" class="start-here-card">
-                <span class="start-here-icon">🎮</span>
-                <span class="start-here-title">Games</span>
-                <span class="start-here-desc">Game reviews focused on narrative, design, and overall experience.</span>
-            </a>
-            <a href="comics.html" class="start-here-card">
-                <span class="start-here-icon">📖</span>
-                <span class="start-here-title">Comics</span>
-                <span class="start-here-desc">Exploring different eras, styles, and the creators behind them.</span>
-            </a>
-            <a href="articles.html" class="start-here-card">
-                <span class="start-here-icon">✍️</span>
-                <span class="start-here-title">Commentary</span>
-                <span class="start-here-desc">Essays and editorials on storytelling, pop culture, and film.</span>
-            </a>
-        </div>
-    </section>
+        <!-- Start Here -->
+        <section class="home-section">
+            <h2 class="section-heading">Start Here</h2>
+            <div class="start-here-grid">
+                <a href="reviews.html" class="start-here-card">
+                    <span class="start-here-icon">🎬</span>
+                    <span class="start-here-title">Movies</span>
+                    <span class="start-here-desc">Reviews covering blockbusters, cult classics, and everything in between.</span>
+                </a>
+                <a href="games.html" class="start-here-card">
+                    <span class="start-here-icon">🎮</span>
+                    <span class="start-here-title">Games</span>
+                    <span class="start-here-desc">Game reviews focused on narrative, design, and overall experience.</span>
+                </a>
+                <a href="comics.html" class="start-here-card">
+                    <span class="start-here-icon">📖</span>
+                    <span class="start-here-title">Comics</span>
+                    <span class="start-here-desc">Exploring different eras, styles, and the creators behind them.</span>
+                </a>
+                <a href="articles.html" class="start-here-card">
+                    <span class="start-here-icon">✍️</span>
+                    <span class="start-here-title">Commentary</span>
+                    <span class="start-here-desc">Essays and editorials on storytelling, pop culture, and film.</span>
+                </a>
+            </div>
+        </section>
 
-    <!-- Popular Posts -->
-    <section class="home-section">
-        <h2 class="section-heading">Popular Posts</h2>
-        <div class="popular-posts-grid">
-            <a href="Articles/costume.html" class="popular-post-card">
-                <img src="Images/Article/Main/Costume Article.avif" alt="Superhero Costumes article">
-                <span class="popular-post-title">The Struggle Between Realism and Fantasy in Superhero Costumes</span>
-            </a>
-            <a href="Articles/vgm.html" class="popular-post-card">
-                <img src="Images/Article/Main/vgm article img.avif" alt="Video Games Cinema article">
-                <span class="popular-post-title">When the Controller Becomes a Script: Are Video Games the New Cinema?</span>
-            </a>
-            <a href="Articles/oz.html" class="popular-post-card">
-                <img src="Images/Article/Main/oz article img.avif" alt="AI Wizard of Oz article">
-                <span class="popular-post-title">Only a Scarecrow Would Fall for This: The AI Wizard of Oz Scam</span>
-            </a>
-            <a href="Articles/adaptation.html" class="popular-post-card">
-                <img src="Images/Article/Main/adaptation.jpg" alt="Adaptation article">
-                <span class="popular-post-title">When You Change Just To Make Some Change</span>
-            </a>
-        </div>
-        <div class="section-cta">
-            <a href="articles.html" class="cta-link">See all commentary →</a>
-        </div>
-    </section>
+        <!-- Popular Posts -->
+        <section class="home-section">
+            <h2 class="section-heading">Popular Posts</h2>
+            <div class="popular-posts-grid">
+                <a href="Articles/costume.html" class="popular-post-card">
+                    <img src="Images/Article/Main/Costume Article.avif" alt="Superhero Costumes article" width="400" height="225" loading="lazy">
+                    <span class="popular-post-title">The Struggle Between Realism and Fantasy in Superhero Costumes</span>
+                </a>
+                <a href="Articles/vgm.html" class="popular-post-card">
+                    <img src="Images/Article/Main/vgm article img.avif" alt="Video Games Cinema article" width="400" height="225" loading="lazy">
+                    <span class="popular-post-title">When the Controller Becomes a Script: Are Video Games the New Cinema?</span>
+                </a>
+                <a href="Articles/oz.html" class="popular-post-card">
+                    <img src="Images/Article/Main/oz article img.avif" alt="AI Wizard of Oz article" width="400" height="225" loading="lazy">
+                    <span class="popular-post-title">Only a Scarecrow Would Fall for This: The AI Wizard of Oz Scam</span>
+                </a>
+                <a href="Articles/adaptation.html" class="popular-post-card">
+                    <img src="Images/Article/Main/adaptation.jpg" alt="Adaptation article" width="400" height="225" loading="lazy">
+                    <span class="popular-post-title">When You Change Just To Make Some Change</span>
+                </a>
+            </div>
+            <div class="section-cta">
+                <a href="articles.html" class="cta-link">See all commentary →</a>
+            </div>
+        </section>
 
-    <!-- Start Streaming -->
-    <section class="home-section streaming-section">
-        <h2 class="section-heading">Start Streaming</h2>
-        <p class="section-subtext">New to streaming or looking to sign up? Some links support Reel Talk at no extra cost to you.</p>
-        <div class="streaming-grid">
-            <a href="https://www.netflix.com/signup" target="_blank" rel="noopener" class="streaming-card netflix">
-                <span class="service-name">Netflix</span>
-                <span class="service-cta">Sign Up →</span>
-            </a>
-            <a href="https://www.amazon.com/amazonprime" target="_blank" rel="noopener" class="streaming-card prime">
-                <span class="service-name">Prime Video</span>
-                <span class="service-cta">Try Prime Free →</span>
-            </a>
-            <a href="https://www.disneyplus.com/welcome" target="_blank" rel="noopener" class="streaming-card disney">
-                <span class="service-name">Disney+</span>
-                <span class="service-cta">Sign Up →</span>
-            </a>
-            <a href="https://www.hulu.com/welcome" target="_blank" rel="noopener" class="streaming-card hulu">
-                <span class="service-name">Hulu</span>
-                <span class="service-cta">Start Free Trial →</span>
-            </a>
-            <a href="https://www.max.com" target="_blank" rel="noopener" class="streaming-card max">
-                <span class="service-name">Max</span>
-                <span class="service-cta">Sign Up →</span>
-            </a>
-            <a href="https://tv.apple.com" target="_blank" rel="noopener" class="streaming-card appletv">
-                <span class="service-name">Apple TV+</span>
-                <span class="service-cta">Try Free →</span>
-            </a>
-        </div>
-    </section>
+        <!-- Start Streaming -->
+        <section class="home-section streaming-section">
+            <h2 class="section-heading">Start Streaming</h2>
+            <p class="section-subtext">New to streaming or looking to sign up? Some links support Reel Talk at no extra cost to you.</p>
+            <div class="streaming-grid">
+                <a href="https://www.netflix.com/signup" target="_blank" rel="noopener" class="streaming-card netflix">
+                    <span class="service-name">Netflix</span>
+                    <span class="service-cta">Sign Up →</span>
+                </a>
+                <a href="https://www.amazon.com/amazonprime" target="_blank" rel="noopener" class="streaming-card prime">
+                    <span class="service-name">Prime Video</span>
+                    <span class="service-cta">Try Prime Free →</span>
+                </a>
+                <a href="https://www.disneyplus.com/welcome" target="_blank" rel="noopener" class="streaming-card disney">
+                    <span class="service-name">Disney+</span>
+                    <span class="service-cta">Sign Up →</span>
+                </a>
+                <a href="https://www.hulu.com/welcome" target="_blank" rel="noopener" class="streaming-card hulu">
+                    <span class="service-name">Hulu</span>
+                    <span class="service-cta">Start Free Trial →</span>
+                </a>
+                <a href="https://www.max.com" target="_blank" rel="noopener" class="streaming-card max">
+                    <span class="service-name">Max</span>
+                    <span class="service-cta">Sign Up →</span>
+                </a>
+                <a href="https://tv.apple.com" target="_blank" rel="noopener" class="streaming-card appletv">
+                    <span class="service-name">Apple TV+</span>
+                    <span class="service-cta">Try Free →</span>
+                </a>
+            </div>
+        </section>
+    </main>
 
-    <!-- Let's Connect -->
+    <!-- Footer -->
     <footer class="site-footer">
         <p class="footer-text">Find more of my work:</p>
         <ul class="footer-links">
@@ -144,8 +138,16 @@
         </ul>
     </footer>
 
-<script src="JS/reviews-data.js"></script>
-<script src="JS/reviews.js"></script>
-<script src="JS/nav.js"></script>
+    <script src="JS/reviews-data.js"></script>
+    <script src="JS/reviews.js"></script>
+    <script src="JS/nav.js" defer></script>
+    <!-- Google Analytics — loaded last so it doesn't block rendering -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-07DEE9B5DF');
+    </script>
 </body>
 </html>
