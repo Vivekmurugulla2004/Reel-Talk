@@ -437,28 +437,39 @@ body {
 
 .carousel-dots {
     position: absolute;
-    bottom: 16px;
+    bottom: 8px;
     right: 48px;
     display: flex;
-    gap: 0; /* spacing handled by dot padding so tap areas don't overlap */
+    gap: 0;
     z-index: 10;
 }
 
 .carousel-dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+}
+
+.carousel-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.35);
-    border: none;
-    cursor: pointer;
-    padding: 10px; /* expands touch target to 28px without changing visible dot size */
-    background-clip: content-box;
     transition: background 0.2s ease;
 }
 
-.carousel-dot.active {
+.carousel-dot.active::after {
     background: #fff;
-    background-clip: content-box;
 }
 
 /* Streaming affiliate grid */
@@ -498,13 +509,13 @@ body {
 .service-cta {
     font-size: 0.78rem;
     font-family: Arial, sans-serif;
-    color: rgba(255, 255, 255, 0.88);
+    color: #fff;
 }
 
-.streaming-card.netflix { background: #E50914; }
-.streaming-card.prime   { background: #00A8E0; }
+.streaming-card.netflix { background: #B5070E; }
+.streaming-card.prime   { background: #0074A8; }
 .streaming-card.disney  { background: #113CCF; }
-.streaming-card.hulu    { background: #1a9a5c; }
+.streaming-card.hulu    { background: #147048; }
 .streaming-card.max     { background: #5822b4; }
 .streaming-card.appletv { background: #1c1c1e; }
 
@@ -667,7 +678,7 @@ label[for="sortOrder"] {
     .carousel-dots {
         right: 0;
         left: 0;
-        bottom: 10px;
+        bottom: 0;
         justify-content: center;
     }
 

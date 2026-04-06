@@ -18,7 +18,7 @@ const allReviews = [
         title:       'Batman v. Superman: Dawn of Justice (2016)',
         desc:        'The two most iconic DC heroes clash in a dark and divisive battle of ideals.',
         poster:      'Images/Review/Poster/bvs poster.jpg',
-        reviewImage: 'Images/Review/Review/bvs review image.webp',
+        reviewImage: 'Images/Review/Review/bvs review image.jpg',
         url:         'Reviews/bvs.html',
         date:        '2025-02-15',
         type:        'Movie Review',
