@@ -9,23 +9,20 @@ const track   = document.getElementById('carousel-track');
 const prevBtn = document.querySelector('.carousel-prev');
 const nextBtn = document.querySelector('.carousel-next');
 
-// Build slides — slide 0 is already hardcoded in HTML for fast LCP, skip it here
+// Build slides — most recent first (index 0 = latest review)
 recentReviews.forEach((review, i) => {
-    if (i > 0) {
-        const slide = document.createElement('div');
-        slide.className = 'carousel-slide';
-        slide.innerHTML = `
-            <img src="${review.reviewImage}" alt="${review.title}" width="1440" height="810" loading="lazy">
-            <div class="carousel-slide-overlay">
-                <span class="slide-category">${review.type}</span>
-                <h3 class="slide-title">${review.title}</h3>
-                <p class="slide-desc">${review.desc}</p>
-                <a href="${review.url}" class="slide-link" aria-label="Read review of ${review.title}">Read Review →</a>
-            </div>
-        `;
-        track.appendChild(slide);
-    }
-
+    const slide = document.createElement('div');
+    slide.className = 'carousel-slide';
+    slide.innerHTML = `
+        <img src="${review.reviewImage}" alt="${review.title}" width="1440" height="810" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}>
+        <div class="carousel-slide-overlay">
+            <span class="slide-category">${review.type}</span>
+            <h3 class="slide-title">${review.title}</h3>
+            <p class="slide-desc">${review.desc}</p>
+            <a href="${review.url}" class="slide-link" aria-label="Read review of ${review.title}">Read Review →</a>
+        </div>
+    `;
+    track.appendChild(slide);
 });
 
 let currentIndex = 0;
