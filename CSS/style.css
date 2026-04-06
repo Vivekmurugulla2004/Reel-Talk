@@ -42,6 +42,19 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
+/* Visually hidden but readable by screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* Hamburger button — hidden on desktop */
 .nav-toggle {
     display: none;
@@ -246,7 +259,7 @@ body {
     font-family: Arial, sans-serif;
     font-size: 0.85rem;
     margin: 0 0 10px;
-    color: #aaa;
+    color: #bbb;
 }
 
 .footer-links {
@@ -371,7 +384,7 @@ body {
 .slide-desc {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgba(255, 255, 255, 0.92);
     margin: 0 0 20px;
     line-height: 1.6;
     max-width: 600px;
@@ -427,7 +440,7 @@ body {
     bottom: 16px;
     right: 48px;
     display: flex;
-    gap: 8px;
+    gap: 0; /* spacing handled by dot padding so tap areas don't overlap */
     z-index: 10;
 }
 
@@ -438,12 +451,14 @@ body {
     background: rgba(255, 255, 255, 0.35);
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: 10px; /* expands touch target to 28px without changing visible dot size */
+    background-clip: content-box;
     transition: background 0.2s ease;
 }
 
 .carousel-dot.active {
     background: #fff;
+    background-clip: content-box;
 }
 
 /* Streaming affiliate grid */
@@ -577,6 +592,7 @@ label[for="sortOrder"] {
         justify-content: flex-start;
         align-items: center;
         padding: 0;
+        min-height: 44px; /* reserves space before nav-toggle is injected, prevents CLS */
     }
 
     /* Links hidden until menu is open */

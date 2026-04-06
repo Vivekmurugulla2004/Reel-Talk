@@ -7,7 +7,33 @@
     <meta name="description" content="Reel Talk features in-depth movie, game, and comic reviews focused on storytelling, themes, and what makes them work.">
     <!-- Preload first carousel image so LCP is fast -->
     <link rel="preload" as="image" href="Images/Review/Review/tasm review.jpg">
-    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Critical above-the-fold CSS inlined to eliminate render-blocking -->
+    <style>
+        body{margin:0;background-color:#FAFAFA}
+        header{display:flex;align-items:center;justify-content:center;background:#CF9FFF}
+        .Header_Title{text-align:center;font-family:Georgia,'Times New Roman',Times,serif;color:#000}
+        .Header_Title h1{font-size:2rem;margin:12px 0}
+        .Header_Image{transform:scale(1.1)}
+        .subheader{display:flex;justify-content:space-evenly;background:#DBB8FF;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+        .subheader a{display:block;color:#000;font-family:'Trebuchet MS',Arial,sans-serif;padding:10px 16px;font-weight:600;font-size:15px;text-decoration:none}
+        .reviews-carousel-section{width:100%;background:#111;margin-bottom:56px}
+        .carousel-hero-wrapper{position:relative;overflow:hidden;height:520px}
+        .carousel-hero-track{display:flex;height:100%}
+        .carousel-slide{flex:0 0 100%;position:relative;height:100%;overflow:hidden}
+        .carousel-slide img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        @media(max-width:768px){
+            .Header_Title h1{font-size:1rem;margin:8px 0}
+            .subheader{flex-wrap:wrap;justify-content:flex-start;align-items:center;padding:0;min-height:44px}
+            .subheader a{display:none;width:100%;padding:13px 20px;font-size:15px;border-top:1px solid rgba(0,0,0,.1);text-align:left}
+            .subheader.nav-open a{display:block}
+            .carousel-hero-wrapper{height:320px}
+        }
+        @media(max-width:480px){.carousel-hero-wrapper{height:280px}}
+    </style>
+    <!-- Full stylesheet loaded non-blocking after critical CSS is applied -->
+    <link rel="preload" href="CSS/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="CSS/style.css"></noscript>
 </head>
 <body>
     <header>
@@ -34,7 +60,8 @@
 
         <!-- Recent Reviews Carousel -->
         <!-- Add new entries to JS/reviews-data.js — this updates automatically -->
-        <section class="reviews-carousel-section" aria-label="Recent Reviews">
+        <section class="reviews-carousel-section">
+            <h2 class="sr-only">Recent Reviews</h2>
             <div class="carousel-hero-wrapper">
                 <div class="carousel-hero-track" id="carousel-track"></div>
                 <button class="carousel-hero-btn carousel-prev" aria-label="Previous">&#8249;</button>
