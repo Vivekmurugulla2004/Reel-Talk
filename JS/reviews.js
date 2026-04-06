@@ -9,7 +9,7 @@ const track   = document.getElementById('carousel-track');
 const prevBtn = document.querySelector('.carousel-prev');
 const nextBtn = document.querySelector('.carousel-next');
 
-// Build slides — most recent first (index 0 = latest review)
+// Build all slides from reviews-data.js — most recent first
 recentReviews.forEach((review, i) => {
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
