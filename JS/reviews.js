@@ -5,35 +5,27 @@ const recentReviews = [...allReviews]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 6);
 
-const track    = document.getElementById('carousel-track');
-const dotsEl   = document.getElementById('carousel-dots');
-const prevBtn  = document.querySelector('.carousel-prev');
-const nextBtn  = document.querySelector('.carousel-next');
+const track   = document.getElementById('carousel-track');
+const prevBtn = document.querySelector('.carousel-prev');
+const nextBtn = document.querySelector('.carousel-next');
 
-// Build slides
+// Build slides — slide 0 is already hardcoded in HTML for fast LCP, skip it here
 recentReviews.forEach((review, i) => {
-    const slide = document.createElement('div');
-    slide.className = 'carousel-slide';
-    // First slide: high priority (it's the LCP element). Rest: lazy load.
-    const imgAttrs = i === 0
-        ? 'fetchpriority="high"'
-        : 'loading="lazy"';
-    slide.innerHTML = `
-        <img src="${review.reviewImage}" alt="${review.title}" width="1200" height="520" ${imgAttrs}>
-        <div class="carousel-slide-overlay">
-            <span class="slide-category">${review.type}</span>
-            <h3 class="slide-title">${review.title}</h3>
-            <p class="slide-desc">${review.desc}</p>
-            <a href="${review.url}" class="slide-link" aria-label="Read review of ${review.title}">Read Review →</a>
-        </div>
-    `;
-    track.appendChild(slide);
+    if (i > 0) {
+        const slide = document.createElement('div');
+        slide.className = 'carousel-slide';
+        slide.innerHTML = `
+            <img src="${review.reviewImage}" alt="${review.title}" width="1440" height="810" loading="lazy">
+            <div class="carousel-slide-overlay">
+                <span class="slide-category">${review.type}</span>
+                <h3 class="slide-title">${review.title}</h3>
+                <p class="slide-desc">${review.desc}</p>
+                <a href="${review.url}" class="slide-link" aria-label="Read review of ${review.title}">Read Review →</a>
+            </div>
+        `;
+        track.appendChild(slide);
+    }
 
-    const dot = document.createElement('button');
-    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-    dot.addEventListener('click', () => goTo(i));
-    dotsEl.appendChild(dot);
 });
 
 let currentIndex = 0;
@@ -42,9 +34,6 @@ let autoTimer;
 function goTo(index) {
     currentIndex = (index + recentReviews.length) % recentReviews.length;
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    document.querySelectorAll('.carousel-dot').forEach((d, i) => {
-        d.classList.toggle('active', i === currentIndex);
-    });
 }
 
 function startAuto() {
