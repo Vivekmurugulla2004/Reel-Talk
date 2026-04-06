@@ -24,7 +24,7 @@ recentReviews.forEach((review, i) => {
             <span class="slide-category">${review.type}</span>
             <h3 class="slide-title">${review.title}</h3>
             <p class="slide-desc">${review.desc}</p>
-            <a href="${review.url}" class="slide-link">Read Review →</a>
+            <a href="${review.url}" class="slide-link" aria-label="Read review of ${review.title}">Read Review →</a>
         </div>
     `;
     track.appendChild(slide);
