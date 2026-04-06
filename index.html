@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reel Talk</title>
     <meta name="description" content="Reel Talk features in-depth movie, game, and comic reviews focused on storytelling, themes, and what makes them work.">
-    <!-- Preload first carousel image so LCP is fast -->
-    <link rel="preload" as="image" href="Images/Review/Review/tasm review.jpg">
     <!-- Critical above-the-fold CSS inlined to eliminate render-blocking -->
     <style>
         body{margin:0;background-color:#FAFAFA}
@@ -61,21 +59,7 @@
         <section class="reviews-carousel-section">
             <h2 class="sr-only">Recent Reviews</h2>
             <div class="carousel-hero-wrapper">
-                <div class="carousel-hero-track" id="carousel-track">
-                <!-- First slide hardcoded so browser can paint LCP image without waiting for JS -->
-                <div class="carousel-slide">
-                    <img src="Images/Review/Review/tasm review.jpg"
-                         alt="The Amazing Spider-Man (2012)"
-                         width="1440" height="810"
-                         fetchpriority="high">
-                    <div class="carousel-slide-overlay">
-                        <span class="slide-category">Movie Review</span>
-                        <h3 class="slide-title">The Amazing Spider-Man (2012)</h3>
-                        <p class="slide-desc">Andrew Garfield takes on the iconic role in this grounded reboot of the Spider-Man story.</p>
-                        <a href="Reviews/tasm.html" class="slide-link" aria-label="Read review of The Amazing Spider-Man (2012)">Read Review →</a>
-                    </div>
-                </div>
-            </div>
+                <div class="carousel-hero-track" id="carousel-track"></div>
                 <button class="carousel-hero-btn carousel-prev" aria-label="Previous">&#8249;</button>
                 <button class="carousel-hero-btn carousel-next" aria-label="Next">&#8250;</button>
             </div>
