@@ -56,28 +56,56 @@ body {
     text-align: center;
 }
 
-/* Image link wrapper — enables overlay and scale */
+/* Image link wrapper — theater lobby display case */
 .Review_Card > div > a:first-child {
     position: relative;
     display: block;
     overflow: hidden;
     border-radius: 4px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.22);
+    padding: 7px 7px 30px;
+    background: #0e0e0e;
+    border: 2px solid #2a2a2a;
+    box-shadow:
+        0 8px 28px rgba(0,0,0,0.60),
+        inset 0 0 0 1px rgba(255,190,0,0.07);
     width: 100%;
     max-width: 200px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.Review_Card > div > a:first-child::after {
-    content: '';
+/* Glass reflection over poster */
+.Review_Card > div > a:first-child::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background: rgba(207, 159, 255, 0.38);
-    opacity: 0;
-    transition: opacity 0.2s ease;
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 4px;
+    background: linear-gradient(
+        155deg,
+        rgba(255,255,255,0.13) 0%,
+        rgba(255,255,255,0.04) 22%,
+        transparent 45%
+    );
 }
 
-.Review_Card > div > a:first-child:hover::after {
-    opacity: 1;
+/* NOW PLAYING label */
+.Review_Card > div > a:first-child::after {
+    content: "NOW PLAYING";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: rgba(220,180,0,0.78);
+    pointer-events: none;
+    z-index: 3;
 }
 
 .Review_Card img {
@@ -87,6 +115,13 @@ body {
     object-fit: cover;
     display: block;
     transition: transform 0.25s ease;
+}
+
+.Review_Card > div > a:first-child:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow:
+        0 22px 48px rgba(0,0,0,0.65),
+        inset 0 0 0 1px rgba(255,190,0,0.14);
 }
 
 .Review_Card > div > a:first-child:hover img {
