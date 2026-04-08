@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reel Talk</title>
     <meta name="description" content="Reel Talk features in-depth movie, game, and comic reviews focused on storytelling, themes, and what makes them work.">
-<!-- Option B: update this href whenever you change the top entry in reviews-data.js -->
-    <link rel="preload" as="image" href="Images/Review/Review/tasm review.webp" fetchpriority="high">
-<!-- Critical CSS inlined — covers ALL layout-affecting rules to prevent CLS when stylesheet loads async -->
+<!-- Critical CSS inlined to prevent layout shift -->
     <style>
         body{margin:0;background-color:#FAFAFA}
         header{display:flex;align-items:center;justify-content:center;background:#CF9FFF}
@@ -70,8 +68,7 @@
             .streaming-grid{grid-template-columns:repeat(2,1fr);padding:0}
         }
     </style>
-    <link rel="stylesheet" href="CSS/style.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="CSS/style.css"></noscript>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
     <header>
@@ -202,8 +199,8 @@
         </ul>
     </footer>
 
-    <script defer src="JS/reviews-data.js"></script>
-    <script defer src="JS/reviews.js"></script>
+    <script src="JS/reviews-data.js"></script>
+    <script src="JS/reviews.js"></script>
     <script defer src="JS/nav.js"></script>
     <!-- Google Analytics — loaded last so it doesn't block rendering -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF"></script>
