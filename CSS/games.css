@@ -32,9 +32,9 @@
   position: relative;
   display: block;
   width: 225px;
-  padding: 38px 10px 10px;
+  padding: 28px 10px 10px;
   border-radius: 16px;
-  border: 2px solid #0b2d7a;
+  border: 2px solid #888;
   background: linear-gradient(to bottom, #f7f7f7 0%, #ffffff 40%, #f0f0f0 100%);
   box-shadow:
     0 14px 26px rgba(0, 0, 0, 0.25),
@@ -43,23 +43,41 @@
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 
+/* Platform banner — flush to top edge, matches card corners */
 .Review_Card.games-grid .cover-link::before {
   content: "";
   position: absolute;
-  left: 10px;
-  right: 10px;
-  top: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 22px;
-  border-radius: 12px;
-  background: linear-gradient(to right, #0b2d7a 0%, #2f6bff 55%, #0b2d7a 100%);
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+  border-radius: 14px 14px 0 0;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.20);
+  /* Default — neutral gray */
+  background: linear-gradient(to right, #555 0%, #888 50%, #555 100%);
 }
 
+/* Nintendo — red */
+.Review_Card.games-grid > div.nintendo > .cover-link::before {
+  background: linear-gradient(to right, #c0001a 0%, #e8001c 50%, #c0001a 100%);
+}
+
+/* Xbox — green */
+.Review_Card.games-grid > div.xbox > .cover-link::before {
+  background: linear-gradient(to right, #0a6b1a 0%, #107c10 50%, #0a6b1a 100%);
+}
+
+/* Sony — blue */
+.Review_Card.games-grid > div.sony > .cover-link::before {
+  background: linear-gradient(to right, #00286b 0%, #003791 50%, #00286b 100%);
+}
+
+/* Glass sheen overlay */
 .Review_Card.games-grid .cover-link::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 16px;
+  border-radius: 14px;
   pointer-events: none;
   background: linear-gradient(
     135deg,
@@ -81,11 +99,15 @@
 
 .Review_Card.games-grid .cover-link:hover {
   transform: translateY(-7px) rotateX(2deg) rotateY(-2deg) scale(1.02);
-  border-color: #2f6bff;
   box-shadow:
     0 22px 44px rgba(0, 0, 0, 0.35),
     inset 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
+
+/* Platform border accent on hover */
+.Review_Card.games-grid > div.nintendo > .cover-link:hover { border-color: #e8001c; }
+.Review_Card.games-grid > div.xbox    > .cover-link:hover { border-color: #107c10; }
+.Review_Card.games-grid > div.sony   > .cover-link:hover { border-color: #003791; }
 
 .Review_Card.games-grid .cover-link:hover::after {
   opacity: 0.55;
