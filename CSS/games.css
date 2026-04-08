@@ -1,9 +1,8 @@
 .Review_Card.games-grid {
   display: grid !important;
-  width: 100% !important;
-  max-width: none !important;
+  max-width: 1400px !important;
   margin: 0 auto;
-  padding: 10px;
+  padding: 24px 20px;
   gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr)) !important;
   justify-items: center;
