@@ -1,7 +1,8 @@
 // ─── ADD NEW REVIEWS HERE ──────────────────────────────────────────────────
 // Add the newest review at the TOP of the array.
-// The homepage carousel will automatically show the 6 most recent (by date).
-// reviews.html will automatically include all of them.
+// After adding, also update the preload href in index.html line ~11:
+//   <link rel="preload" as="image" href="...your new reviewImage path...">
+// That one change keeps PageSpeed LCP fast.
 // ───────────────────────────────────────────────────────────────────────────
 
 const allReviews = [
