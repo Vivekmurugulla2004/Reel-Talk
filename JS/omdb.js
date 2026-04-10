@@ -81,9 +81,11 @@ function insertOMDBBlock(article, data) {
         <a href="${trailerLink}" target="_blank" rel="noopener" class="trailer-btn">▶ Watch Trailer on YouTube</a>
     </div>`;
 
+    const rating = article.querySelector('.review-rating');
     const h4 = article.querySelector('h4');
-    if (h4) {
-        h4.insertAdjacentHTML('afterend', html);
+    const anchor = rating || h4;
+    if (anchor) {
+        anchor.insertAdjacentHTML('afterend', html);
     } else {
         const firstP = article.querySelector('p');
         if (firstP) firstP.insertAdjacentHTML('beforebegin', html);
