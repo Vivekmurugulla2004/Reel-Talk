@@ -212,6 +212,48 @@
     text-decoration: underline;
 }
 
+/* Dark mode */
+[data-theme="dark"] .ranking-hero {
+    background: linear-gradient(135deg, #1e1040 0%, #160d30 100%);
+    border-bottom-color: #3a1f6e;
+}
+
+[data-theme="dark"] .ranking-hero h1 { color: #f0e6ff; }
+[data-theme="dark"] .ranking-hero .tag { color: #CF9FFF; }
+[data-theme="dark"] .ranking-hero .subtitle { color: #aaa; }
+
+[data-theme="dark"] .ranking-wrap > p { color: #d0d0d0; }
+
+[data-theme="dark"] .intro-quote {
+    background: rgba(90, 45, 158, 0.18);
+    border-left-color: #7B2FBE;
+    color: #ccc;
+}
+
+[data-theme="dark"] .rank-entry { border-top-color: #2a2a2a; }
+[data-theme="dark"] .rank-entry:last-child { border-bottom-color: #2a2a2a; }
+
+[data-theme="dark"] .rank-poster {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+[data-theme="dark"] .rank-content h2 { color: #f0e6ff; }
+[data-theme="dark"] .rank-meta { color: #777; }
+[data-theme="dark"] .rank-content p { color: #ccc; }
+
+[data-theme="dark"] .closing-note {
+    color: #aaa;
+    border-top-color: #2a2a2a;
+}
+
+[data-theme="dark"] .related-posts h2 {
+    color: #f0e6ff;
+    border-bottom-color: #3a1f6e;
+}
+
+[data-theme="dark"] .related-card-title { color: #ccc; }
+
 @media (max-width: 768px) {
     .ranking-hero {
         padding: 36px 16px 32px;
