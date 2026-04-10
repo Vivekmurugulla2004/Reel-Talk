@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -34,6 +38,11 @@ body {
 }
 .subheader a:hover {
     background: rgba(0, 0, 0, 0.08);
+}
+.subheader a.active {
+    background: rgba(0, 0, 0, 0.13);
+    font-weight: 700;
+    border-bottom: 2px solid #7B2FBE;
 }
 .subheader {
     display: flex;
@@ -620,6 +629,13 @@ label[for="sortOrder"] {
         display: block;
     }
 
+    /* Active link on mobile: left bar instead of bottom border */
+    .subheader a.active {
+        border-bottom: none;
+        border-left: 3px solid #7B2FBE;
+        padding-left: 17px;
+    }
+
     .about img {
         display: block;
         margin: 20px auto;
@@ -756,3 +772,86 @@ label[for="sortOrder"] {
 @media (max-width: 768px) {
     .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 1rem; }
 }
+
+/* ── Dark mode toggle button ──────────────────────────────────────────── */
+.dark-toggle {
+    position: fixed;
+    bottom: 28px;
+    left: 28px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #CF9FFF;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.22);
+    z-index: 999;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+.dark-toggle:hover { background: #b87fff; transform: translateY(-2px); }
+@media (max-width: 768px) {
+    .dark-toggle { bottom: 16px; left: 16px; width: 40px; height: 40px; font-size: 1rem; }
+}
+
+/* ── Dark mode overrides ──────────────────────────────────────────────── */
+[data-theme="dark"] body { background: #121212; color: #e0e0e0; }
+[data-theme="dark"] header { background: #1a1a1a; }
+[data-theme="dark"] .Header_Image img { filter: invert(1); }
+[data-theme="dark"] .Header_Title h1 { color: #f0e6ff; }
+[data-theme="dark"] .subheader { background: #242424; box-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+[data-theme="dark"] .subheader a { color: #e0e0e0; border-top-color: rgba(255,255,255,0.08); }
+[data-theme="dark"] .subheader a:hover { background: rgba(255,255,255,0.08); }
+[data-theme="dark"] .subheader a.active { background: rgba(255,255,255,0.1); border-bottom-color: #CF9FFF; border-left-color: #CF9FFF; }
+[data-theme="dark"] .nav-toggle span { background: #e0e0e0; }
+[data-theme="dark"] .about-btn { background: #1e1040; color: #CF9FFF; }
+[data-theme="dark"] .about-btn:hover { background: #2d1b5e; }
+
+/* Homepage */
+[data-theme="dark"] .site-intro p { color: #b0b0b0; }
+[data-theme="dark"] .section-heading { color: #f0e6ff; border-bottom-color: #5a2d9e; }
+[data-theme="dark"] .section-subtext { color: #999; }
+[data-theme="dark"] .start-here-card { background: #1e1040; }
+[data-theme="dark"] .start-here-title { color: #f0e6ff; }
+[data-theme="dark"] .start-here-desc { color: #aaa; }
+[data-theme="dark"] .popular-post-title { color: #d0d0d0; }
+[data-theme="dark"] .streaming-section { background: #1a1a1a; }
+[data-theme="dark"] .cta-link { color: #b87fff; }
+[data-theme="dark"] .site-footer { background: #0a0a0a; }
+
+/* Review pages */
+[data-theme="dark"] .movie-review h1 { color: #f0e6ff; }
+[data-theme="dark"] .movie-review h3 { color: #aaa; }
+[data-theme="dark"] .movie-review h4 { color: #888; border-bottom-color: #3a1f6e; }
+[data-theme="dark"] .review-paragraph { color: #d4d4d4; }
+[data-theme="dark"] .top_quote,
+[data-theme="dark"] .bottom_quote { background: rgba(90,45,158,0.18); border-left-color: #7B2FBE; color: #ccc; }
+[data-theme="dark"] .omdb-info { background: rgba(90,45,158,0.18); border-color: rgba(123,47,190,0.4); }
+[data-theme="dark"] .omdb-meta { color: #bbb; }
+[data-theme="dark"] .trailer-btn { background: #5a2d9e; color: #fff; }
+[data-theme="dark"] .trailer-btn:hover { background: #7B2FBE; }
+[data-theme="dark"] .where-to-watch { background: rgba(90,45,158,0.18); border-color: rgba(123,47,190,0.4); }
+[data-theme="dark"] .review-rating { border-color: #3a1f6e; }
+[data-theme="dark"] .rating-label { color: #666; }
+
+/* Related reviews */
+[data-theme="dark"] .related-heading { color: #666; }
+[data-theme="dark"] .related-title { color: #ccc; }
+
+/* About page */
+[data-theme="dark"] .about-wrapper h2 { color: #f0e6ff; border-bottom-color: #3a1f6e; }
+[data-theme="dark"] .about-wrapper p,
+[data-theme="dark"] .about-wrapper ul { color: #d0d0d0; }
+[data-theme="dark"] .about-link-pill { background: #1e1040; color: #CF9FFF; border-color: #3a1f6e; }
+[data-theme="dark"] .about-link-pill:hover { background: #2d1b5e; }
+
+/* 404 page */
+[data-theme="dark"] .not-found h1 { color: #f0e6ff; }
+[data-theme="dark"] .not-found p { color: #aaa; }
+[data-theme="dark"] .not-found-link.secondary { background: #1e1040; color: #CF9FFF; }
+
+/* Sort dropdown */
+[data-theme="dark"] #sortOrder { background: #2a1a4e; color: #e0e0e0; border-color: #5a2d9e; }

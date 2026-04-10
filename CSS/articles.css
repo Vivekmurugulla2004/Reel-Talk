@@ -233,3 +233,8 @@ label[for="sortOrder"] {
     }
 
 }
+/* ── Dark mode ───────────────────────────────────────────────────────── */
+[data-theme="dark"] .Article_Card > div > a:last-child { color: #e0e0e0; }
+[data-theme="dark"] .Article_Card > div > a:last-child:hover { color: #CF9FFF; }
+[data-theme="dark"] label[for="sortOrder"] { color: #e0e0e0; }
+[data-theme="dark"] #sortOrder { background: #2a2a2a; color: #e0e0e0; border-color: #555; }
