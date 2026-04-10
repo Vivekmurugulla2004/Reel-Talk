@@ -162,3 +162,14 @@
     object-fit: cover;
   }
 }
+
+/* ── Dark mode ───────────────────────────────────────────────────────── */
+[data-theme="dark"] .Review_Card.games-grid .cover-link {
+    background: linear-gradient(to bottom, #2a2a2a 0%, #1e1e1e 100%);
+    border-color: #444;
+    box-shadow: 0 14px 26px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+[data-theme="dark"] .Review_Card.games-grid > div > a:last-child { color: #e0e0e0; }
+[data-theme="dark"] .Review_Card.games-grid > div > a:last-child:hover { color: #CF9FFF; }
+[data-theme="dark"] label[for="sortOrder"] { color: #e0e0e0; }
+[data-theme="dark"] #sortOrder { background: #2a2a2a; color: #e0e0e0; border-color: #555; }
