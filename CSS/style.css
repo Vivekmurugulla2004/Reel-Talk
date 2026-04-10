@@ -528,6 +528,8 @@ body {
 .streaming-card.max     { background: #5822b4; }
 .streaming-card.appletv { background: #1c1c1e; }
 
+.sort-bar { margin: 1rem 0; }
+
 label[for="sortOrder"] {
   display: inline-block;
   margin: 12px 8px 0 10px;
