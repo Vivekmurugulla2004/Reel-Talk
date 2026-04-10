@@ -730,3 +730,29 @@ label[for="sortOrder"] {
     }
 }
 
+
+/* ── Back to top button ─────────────────────────────────────────────── */
+.back-to-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #CF9FFF;
+    border: none;
+    color: #000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.22);
+    transition: background 0.15s ease, transform 0.15s ease;
+    z-index: 999;
+}
+.back-to-top.visible { display: flex; }
+.back-to-top:hover { background: #b87fff; transform: translateY(-2px); }
+@media (max-width: 768px) {
+    .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 1rem; }
+}
