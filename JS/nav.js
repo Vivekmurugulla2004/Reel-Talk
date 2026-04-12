@@ -39,22 +39,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ── Dark mode toggle ───────────────────────────────────────────────
-    const darkBtn = document.createElement('button');
-    darkBtn.className = 'dark-toggle';
-    darkBtn.setAttribute('aria-label', 'Toggle dark mode');
-    darkBtn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
-    document.body.appendChild(darkBtn);
+    // ── Dark mode toggle switch ────────────────────────────────────────
+    // ── Dark mode toggle switch ────────────────────────────────────────
+    const darkSwitch = document.createElement('button');
+    darkSwitch.className = 'dark-switch';
+    darkSwitch.setAttribute('aria-label', 'Toggle dark mode');
+    darkSwitch.innerHTML = `<span class="dark-switch-label">Dark mode</span><span class="dark-switch-track"><span class="dark-switch-thumb"></span></span>`;
+    const headerEl = document.querySelector('header');
+    if (headerEl) {
+        headerEl.style.position = 'relative';
+        headerEl.appendChild(darkSwitch);
+    }
 
-    darkBtn.addEventListener('click', function () {
+    darkSwitch.addEventListener('click', function () {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         if (isDark) {
             document.documentElement.removeAttribute('data-theme');
-            darkBtn.textContent = '🌙';
             localStorage.setItem('theme', 'light');
         } else {
             document.documentElement.setAttribute('data-theme', 'dark');
-            darkBtn.textContent = '☀️';
             localStorage.setItem('theme', 'dark');
         }
     });
