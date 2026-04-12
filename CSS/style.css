@@ -816,8 +816,20 @@ label[for="sortOrder"] {
 [data-theme="dark"] .dark-switch { color: #e0e0e0; }
 [data-theme="dark"] .dark-switch-track { background: #7B2FBE; }
 [data-theme="dark"] .dark-switch-thumb { transform: translateX(17px); }
+.dark-switch-mobile { display: none; }
+
 @media (max-width: 768px) {
-    .dark-switch-label { display: none; }
+    .dark-switch-desktop { display: none; }
+    header { padding-right: 0; }
+    .dark-switch-mobile {
+        display: flex;
+        position: static;
+        transform: none;
+        margin-left: auto;
+        padding: 0 14px;
+        height: 44px;
+        color: #000;
+    }
 }
 
 /* ── Dark mode overrides ──────────────────────────────────────────────── */

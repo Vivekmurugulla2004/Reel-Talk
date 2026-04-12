@@ -40,18 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ── Dark mode toggle switch ────────────────────────────────────────
-    // ── Dark mode toggle switch ────────────────────────────────────────
-    const darkSwitch = document.createElement('button');
-    darkSwitch.className = 'dark-switch';
-    darkSwitch.setAttribute('aria-label', 'Toggle dark mode');
-    darkSwitch.innerHTML = `<span class="dark-switch-label">Dark mode</span><span class="dark-switch-track"><span class="dark-switch-thumb"></span></span>`;
-    const headerEl = document.querySelector('header');
-    if (headerEl) {
-        headerEl.style.position = 'relative';
-        headerEl.appendChild(darkSwitch);
-    }
-
-    darkSwitch.addEventListener('click', function () {
+    function toggleTheme() {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         if (isDark) {
             document.documentElement.removeAttribute('data-theme');
@@ -60,7 +49,26 @@ document.addEventListener('DOMContentLoaded', function () {
             document.documentElement.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
         }
-    });
+    }
+
+    function makeSwitch(extraClass) {
+        const sw = document.createElement('button');
+        sw.className = 'dark-switch ' + extraClass;
+        sw.setAttribute('aria-label', 'Toggle dark mode');
+        sw.innerHTML = `<span class="dark-switch-label">Dark mode</span><span class="dark-switch-track"><span class="dark-switch-thumb"></span></span>`;
+        sw.addEventListener('click', toggleTheme);
+        return sw;
+    }
+
+    // Desktop: top-right of header
+    const headerEl = document.querySelector('header');
+    if (headerEl) {
+        headerEl.style.position = 'relative';
+        headerEl.appendChild(makeSwitch('dark-switch-desktop'));
+    }
+
+    // Mobile: right side of nav bar
+    if (nav) nav.appendChild(makeSwitch('dark-switch-mobile'));
 
     // ── Back to top button ─────────────────────────────────────────────
     const topBtn = document.createElement('button');
