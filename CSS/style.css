@@ -842,8 +842,8 @@ label[for="sortOrder"] {
 [data-theme="dark"] .subheader a:hover { background: rgba(255,255,255,0.08); }
 [data-theme="dark"] .subheader a.active { background: rgba(255,255,255,0.1); border-bottom-color: #CF9FFF; border-left-color: #CF9FFF; }
 [data-theme="dark"] .nav-toggle span { background: #e0e0e0; }
-[data-theme="dark"] .about-btn { background: #1e1040; color: #CF9FFF; }
-[data-theme="dark"] .about-btn:hover { background: #2d1b5e; }
+[data-theme="dark"] .about-btn { color: #CF9FFF; border-color: #CF9FFF; }
+[data-theme="dark"] .about-btn:hover { background: #CF9FFF; color: #000; }
 
 /* Homepage */
 [data-theme="dark"] .site-intro p { color: #b0b0b0; }
