@@ -775,28 +775,49 @@ label[for="sortOrder"] {
     .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 1rem; }
 }
 
-/* ── Dark mode toggle button ──────────────────────────────────────────── */
-.dark-toggle {
-    position: fixed;
-    bottom: 28px;
-    left: 28px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #CF9FFF;
-    border: none;
-    font-size: 1.1rem;
-    cursor: pointer;
+/* ── Dark mode toggle switch ──────────────────────────────────────────── */
+.dark-switch {
     display: flex;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.22);
-    z-index: 999;
-    transition: background 0.15s ease, transform 0.15s ease;
+    gap: 7px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    font-size: 0.8rem;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
 }
-.dark-toggle:hover { background: #b87fff; transform: translateY(-2px); }
+.dark-switch-track {
+    width: 38px;
+    height: 21px;
+    border-radius: 11px;
+    background: rgba(0,0,0,0.2);
+    position: relative;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+.dark-switch-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    transition: transform 0.2s;
+}
+[data-theme="dark"] .dark-switch { color: #e0e0e0; }
+[data-theme="dark"] .dark-switch-track { background: #7B2FBE; }
+[data-theme="dark"] .dark-switch-thumb { transform: translateX(17px); }
 @media (max-width: 768px) {
-    .dark-toggle { bottom: 16px; left: 16px; width: 40px; height: 40px; font-size: 1rem; }
+    .dark-switch-label { display: none; }
 }
 
 /* ── Dark mode overrides ──────────────────────────────────────────────── */
