@@ -33,9 +33,10 @@
         .carousel-hero-btn{position:absolute;top:50%;transform:translateY(-50%);border:none;border-radius:50%;width:52px;height:52px;display:flex;align-items:center;justify-content:center;z-index:10}
         .carousel-prev{left:20px}.carousel-next{right:20px}
         /* Homepage sections */
-        .site-intro{max-width:800px;margin:32px auto 8px;padding:0 24px;text-align:center}
-        .about-btn{display:inline-block;margin-top:14px;font-family:'Trebuchet MS',Arial,sans-serif;font-size:1rem;font-weight:600;color:#7B2FBE;background:#f0e6ff;padding:12px 28px;border-radius:999px;text-decoration:none;transition:background 0.15s ease}
-        .about-btn:hover{background:#CF9FFF}
+        .site-intro{max-width:680px;margin:36px auto 0;padding:0 24px;text-align:center}
+        .site-intro p{margin:0 0 14px;color:#444;font-size:1.05rem;line-height:1.7}
+        .about-btn{display:inline-block;font-family:'Trebuchet MS',Arial,sans-serif;font-size:0.85rem;font-weight:600;color:#7B2FBE;background:transparent;padding:7px 18px;border-radius:999px;border:2px solid #7B2FBE;text-decoration:none;transition:background 0.15s ease,color 0.15s ease}
+        .about-btn:hover{background:#7B2FBE;color:#fff}
         .home-section{max-width:1200px;margin:0 auto 56px;padding:0 24px}
         .section-heading{margin:40px 0 20px;padding-bottom:10px;border-bottom:2px solid #CF9FFF}
         .section-subtext{margin:-10px 0 16px}
@@ -64,6 +65,8 @@
             .popular-posts-grid{grid-template-columns:repeat(2,1fr);gap:14px}
             .home-section{padding:0 16px}
             .streaming-grid{grid-template-columns:repeat(2,1fr);padding:0 5%}
+            .site-intro{margin:24px auto 0;padding:0 16px}
+            .site-intro p{font-size:0.97rem}
         }
         @media(max-width:480px){
             .carousel-hero-wrapper{height:280px}
@@ -103,11 +106,6 @@
     </nav>
 
     <main>
-        <!-- Intro -->
-        <section class="site-intro">
-            <p>Reel Talk features movie, game, and comic reviews focused on storytelling, themes, and what makes them work.</p>
-        </section>
-
         <!-- Recent Reviews Carousel -->
         <!-- Add new entries to JS/reviews-data.js — this updates automatically -->
         <section class="reviews-carousel-section">
@@ -119,10 +117,11 @@
             </div>
         </section>
 
-        <!-- About link -->
-        <div style="text-align:center;margin:24px 0 0">
-            <a href="about.html" class="about-btn">About this site →</a>
-        </div>
+        <!-- Intro -->
+        <section class="site-intro">
+            <p>In-depth reviews on movies, games, and comics. The focus is always on story, themes, and what makes them worth your time.</p>
+            <a href="about.html" class="about-btn">Learn more about this site →</a>
+        </section>
 
         <!-- Start Here -->
         <section class="home-section">
