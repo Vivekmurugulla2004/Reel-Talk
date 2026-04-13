@@ -105,8 +105,8 @@
   .Review_Card {
     grid-template-columns: repeat(2, 1fr);
     box-sizing: border-box;
-    gap: 12px;
-    padding: 16px 5%;
+    gap: 24px;
+    padding: 20px 5%;
   }
 
   .Review_Card > div > a:first-child {
