@@ -9,7 +9,7 @@ const allReviews = [
     {
         title:       'American Psycho (2000)',
         desc:        'A comedy about a void wearing a suit. And nobody notices.',
-        poster:      'Images/Review/Poster/american psycho poster.jpg',
+        poster:      'Images/Review/Poster/american psycho poster.webp',
         reviewImage: 'Images/Review/Review/american psycho review image.webp',
         url:         'Reviews/american-psycho.html',
         date:        '2026-05-25',
@@ -18,7 +18,7 @@ const allReviews = [
     {
         title:       'Baahubali: The Beginning (2015)',
         desc:        'Epic in scale, uneven on the ground — but when it commits, nothing else in Indian cinema matches it.',
-        poster:      'Images/Review/Poster/baahubali poster.jpg',
+        poster:      'Images/Review/Poster/baahubali poster.webp',
         reviewImage: 'Images/Review/Review/baahubali review image.webp',
         url:         'Reviews/baahubali.html',
         date:        '2026-06-10',
@@ -27,7 +27,7 @@ const allReviews = [
     {
         title:       'Casablanca (1942)',
         desc:        'Eighty years have not touched it.',
-        poster:      'Images/Review/Poster/casablanca poster.jpg',
+        poster:      'Images/Review/Poster/casablanca poster.webp',
         reviewImage: 'Images/Review/Review/casablanca review image.webp',
         url:         'Reviews/casablanca.html',
         date:        '2026-05-18',
@@ -36,7 +36,7 @@ const allReviews = [
     {
         title:       'Drive (2011)',
         desc:        'The craft is precise. The distance is real. Whether that is a flaw depends on what you came for.',
-        poster:      'Images/Review/Poster/drive poster.jpg',
+        poster:      'Images/Review/Poster/drive poster.webp',
         reviewImage: 'Images/Review/Review/drive review image.webp',
         url:         'Reviews/drive.html',
         date:        '2026-05-27',
@@ -45,7 +45,7 @@ const allReviews = [
     {
         title:       'Fight Club (1999)',
         desc:        'A diagnosis, not a celebration. One of the most precisely constructed films of the nineties.',
-        poster:      'Images/Review/Poster/fight club poster.jpg',
+        poster:      'Images/Review/Poster/fight club poster.webp',
         reviewImage: 'Images/Review/Review/fight club review image.webp',
         url:         'Reviews/fight-club.html',
         date:        '2026-05-04',
@@ -54,7 +54,7 @@ const allReviews = [
     {
         title:       'Godzilla (1954)',
         desc:        'Could have been pulp. Instead it is a film about fear, responsibility, and things you cannot un-create.',
-        poster:      'Images/Review/Poster/godzilla poster.jpg',
+        poster:      'Images/Review/Poster/godzilla poster.webp',
         reviewImage: 'Images/Review/Review/godzilla review image.webp',
         url:         'Reviews/godzilla.html',
         date:        '2026-06-03',
@@ -63,7 +63,7 @@ const allReviews = [
     {
         title:       'Parasite (2019)',
         desc:        'The most precisely constructed film of the last decade. A comedy, thriller, critique, and tragedy all at once.',
-        poster:      'Images/Review/Poster/parasite poster.jpg',
+        poster:      'Images/Review/Poster/parasite poster.webp',
         reviewImage: 'Images/Review/Review/parasite review image.webp',
         url:         'Reviews/parasite.html',
         date:        '2026-04-27',
@@ -72,7 +72,7 @@ const allReviews = [
     {
         title:       'Spirited Away (2001)',
         desc:        'Some films are made for children. This one is made for anyone who was ever a child.',
-        poster:      'Images/Review/Poster/spirited away poster.jpg',
+        poster:      'Images/Review/Poster/spirited away poster.webp',
         reviewImage: 'Images/Review/Review/spirited away review image.webp',
         url:         'Reviews/spirited-away.html',
         date:        '2026-05-11',
@@ -81,7 +81,7 @@ const allReviews = [
     {
         title:       'The Dark Knight (2008)',
         desc:        'A near-perfect crime thriller that changed what superhero films were allowed to be — for better and for worse.',
-        poster:      'Images/Review/Poster/dark knight poster.jpg',
+        poster:      'Images/Review/Poster/dark knight poster.webp',
         reviewImage: 'Images/Review/Review/dark knight review image.webp',
         url:         'Reviews/dark-knight.html',
         date:        '2026-04-15',
