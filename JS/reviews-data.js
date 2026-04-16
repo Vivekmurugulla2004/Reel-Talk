@@ -17,7 +17,7 @@ const allReviews = [
     },
     {
         title:       'Baahubali: The Beginning (2015)',
-        desc:        'Epic in scale, uneven on the ground — but when it commits, nothing else in Indian cinema matches it.',
+        desc:        'Epic in scale, uneven on the ground. But when it commits, nothing else in Indian cinema matches it.',
         poster:      'Images/Review/Poster/baahubali poster.webp',
         reviewImage: 'Images/Review/Review/baahubali review image.webp',
         url:         'Reviews/baahubali.html',

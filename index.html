@@ -113,7 +113,18 @@
         <section class="reviews-carousel-section">
             <h2 class="sr-only">Recent Reviews</h2>
             <div class="carousel-hero-wrapper">
-                <div class="carousel-hero-track" id="carousel-track"></div>
+                <div class="carousel-hero-track" id="carousel-track">
+                    <!-- First slide is static HTML for LCP — update this AND the preload href in <head> whenever the newest review changes -->
+                    <div class="carousel-slide">
+                        <img src="Images/Review/Review/baahubali review image.webp" alt="Baahubali: The Beginning (2015)" width="1440" height="810" fetchpriority="high">
+                        <div class="carousel-slide-overlay">
+                            <span class="slide-category">Movie Review</span>
+                            <h3 class="slide-title">Baahubali: The Beginning (2015)</h3>
+                            <p class="slide-desc">Epic in scale, uneven on the ground. But when it commits, nothing else in Indian cinema matches it.</p>
+                            <a href="Reviews/baahubali.html" class="slide-link" aria-label="Read review of Baahubali: The Beginning (2015)">Read Review &#8594;</a>
+                        </div>
+                    </div>
+                </div>
                 <button class="carousel-hero-btn carousel-prev" aria-label="Previous">&#8249;</button>
                 <button class="carousel-hero-btn carousel-next" aria-label="Next">&#8250;</button>
             </div>
