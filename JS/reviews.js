@@ -9,8 +9,9 @@ const track   = document.getElementById('carousel-track');
 const prevBtn = document.querySelector('.carousel-prev');
 const nextBtn = document.querySelector('.carousel-next');
 
-// Build all slides from reviews-data.js — most recent first
+// Build remaining slides — first slide is already in HTML (index.html) for LCP performance
 recentReviews.forEach((review, i) => {
+    if (i === 0) return; // already rendered as static HTML
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
     slide.innerHTML = `
