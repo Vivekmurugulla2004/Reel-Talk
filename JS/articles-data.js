@@ -26,7 +26,7 @@ const allArticles = [
         type:  'Commentary',
     },
     {
-        title: 'Stop Skipping the Song-and-Dance Numbers: Indian Films for Everyone',
+        title: 'The Indian Films I Keep Coming Back To',
         image: 'Images/Article/Main/indian-movies.webp',
         url:   'Articles/indian-movies.html',
         date:  '2026-04-24',
