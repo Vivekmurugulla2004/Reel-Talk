@@ -162,27 +162,10 @@
             </div>
         </section>
 
-        <!-- Popular Posts -->
+        <!-- Recent Posts -->
         <section class="home-section">
-            <h2 class="section-heading">Popular Posts</h2>
-            <div class="popular-posts-grid">
-                <a href="Articles/costume.html" class="popular-post-card">
-                    <img src="Images/Article/Main/Costume Article.webp" alt="Superhero Costumes article" width="400" height="225" loading="lazy">
-                    <span class="popular-post-title">The Struggle Between Realism and Fantasy in Superhero Costumes</span>
-                </a>
-                <a href="Articles/vgm.html" class="popular-post-card">
-                    <img src="Images/Article/Main/vgm article img.avif" alt="Video Games Cinema article" width="400" height="225" loading="lazy">
-                    <span class="popular-post-title">When the Controller Becomes a Script: Are Video Games the New Cinema?</span>
-                </a>
-                <a href="Articles/oz.html" class="popular-post-card">
-                    <img src="Images/Article/Main/oz article img.webp" alt="AI Wizard of Oz article" width="400" height="225" loading="lazy">
-                    <span class="popular-post-title">Only a Scarecrow Would Fall for This: The AI Wizard of Oz Scam</span>
-                </a>
-                <a href="Articles/adaptation.html" class="popular-post-card">
-                    <img src="Images/Article/Main/adaptation.webp" alt="Adaptation article" width="400" height="225" loading="lazy">
-                    <span class="popular-post-title">When You Change Just To Make Some Change</span>
-                </a>
-            </div>
+            <h2 class="section-heading">Recent Posts</h2>
+            <div class="popular-posts-grid" id="recent-posts-grid"></div>
             <div class="section-cta">
                 <a href="articles.html" class="cta-link">See all commentary →</a>
             </div>
@@ -232,6 +215,25 @@
 
     <script src="JS/reviews-data.js"></script>
     <script src="JS/reviews.js"></script>
+    <script src="JS/articles-data.js"></script>
+    <script>
+        (function () {
+            const grid = document.getElementById('recent-posts-grid');
+            if (!grid) return;
+            const recent = [...allArticles]
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                .slice(0, 4);
+            recent.forEach(function (article) {
+                const a = document.createElement('a');
+                a.href = article.url;
+                a.className = 'popular-post-card';
+                a.innerHTML =
+                    '<img src="' + article.image + '" alt="' + article.title + '" width="400" height="225" loading="lazy">' +
+                    '<span class="popular-post-title">' + article.title + '</span>';
+                grid.appendChild(a);
+            });
+        })();
+    </script>
     <script defer src="JS/nav.js"></script>
     <!-- Analytics: queue events immediately, load script only when browser is idle -->
     <script>
