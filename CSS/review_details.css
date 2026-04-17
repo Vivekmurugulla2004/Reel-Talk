@@ -347,7 +347,11 @@
     white-space: nowrap;
 }
 .rating-score {
-    display: none;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #CF9FFF;
+    margin-left: -12px;
 }
 .rating-stars {
     font-size: 2rem;
@@ -411,7 +415,7 @@
 
 @media (max-width: 768px) {
     .review-rating { padding: 16px; gap: 14px; }
-    .rating-score { display: none; }
+    .rating-score { font-size: 1.2rem; }
     .related-grid { gap: 12px; }
     .related-title { font-size: 0.78rem; }
     .related-reviews { padding: 0 5%; }

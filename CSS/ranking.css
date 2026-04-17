@@ -264,16 +264,16 @@
     }
 
     .rank-entry {
-        grid-template-columns: 40px 80px 1fr;
+        grid-template-columns: 36px 1fr;
         gap: 0 12px;
     }
 
     .rank-num {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .rank-poster {
-        width: 80px;
+        display: none;
     }
 
     .related-grid {
