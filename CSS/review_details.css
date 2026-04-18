@@ -393,6 +393,7 @@
     width: 100%;
     aspect-ratio: 2 / 3;
     object-fit: cover;
+    object-position: center 55%;
     border-radius: 6px;
     box-shadow: 0 3px 12px rgba(0,0,0,0.18);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -416,7 +417,11 @@
 @media (max-width: 768px) {
     .review-rating { padding: 16px; gap: 14px; }
     .rating-score { font-size: 1.2rem; }
-    .related-grid { gap: 12px; }
+    .related-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .related-title { font-size: 0.78rem; }
     .related-reviews { padding: 0 5%; }
+}
+
+@media (max-width: 420px) {
+    .related-grid { grid-template-columns: 1fr; max-width: 240px; margin: 0 auto; }
 }
