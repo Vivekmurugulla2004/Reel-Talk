@@ -5,6 +5,27 @@
 
 const allArticles = [
     {
+        title: 'The Last Scene Is the Whole Argument: Best Movie Endings Ranked',
+        image: 'Images/Article/Main/movie-endings.webp',
+        url:   'Articles/best-movie-endings.html',
+        date:  '2026-06-08',
+        type:  'Ranking',
+    },
+    {
+        title: 'No Budget, No Compromise: The Best Indie Films Ranked',
+        image: 'Images/Article/Main/indie-films.webp',
+        url:   'Articles/best-indie-films.html',
+        date:  '2026-05-22',
+        type:  'Ranking',
+    },
+    {
+        title: 'The Decade That Finally Made Science Fiction Interesting Again: The Best Sci-Fi Films of the 2010s',
+        image: 'Images/Article/Main/sci-fi-2010s.webp',
+        url:   'Articles/sci-fi-2010s.html',
+        date:  '2026-05-08',
+        type:  'Ranking',
+    },
+    {
         title: 'A Long Time Ago Was Not a Setting: Why Star Wars Works as Fantasy',
         image: 'Images/Article/Main/star-wars.webp',
         url:   'Articles/star-wars-fantasy.html',
