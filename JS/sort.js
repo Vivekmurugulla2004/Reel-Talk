@@ -1,4 +1,4 @@
-// Shared sort bar for listing pages (games, comics, articles)
+// Shared sort bar + filter tabs for listing pages (games, comics, articles)
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.Article_Card') || document.querySelector('.Review_Card');
     if (!grid) return;
@@ -21,13 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function sortCards(order) {
-        const cards = Array.from(grid.children);
+        const cards = Array.from(grid.children).filter(c => c.style.display !== 'none');
+        const hidden = Array.from(grid.children).filter(c => c.style.display === 'none');
         cards.sort((a, b) => {
             const ta = sortKey(a);
             const tb = sortKey(b);
             return order === 'az' ? ta.localeCompare(tb) : tb.localeCompare(ta);
         });
-        grid.append(...cards);
+        grid.append(...cards, ...hidden);
     }
 
     document.getElementById('sortOrder').addEventListener('change', e => {
@@ -35,4 +36,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     sortCards('az');
+
+    // Filter tabs
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    if (!filterBtns.length) return;
+
+    const classMap = { playstation: 'sony', xbox: 'xbox', nintendo: 'nintendo', dc: 'dc', marvel: 'marvel' };
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+            Array.from(grid.children).forEach(card => {
+                if (filter === 'all') {
+                    card.style.display = '';
+                } else if (filter === 'other') {
+                    card.style.display = (!card.classList.contains('dc') && !card.classList.contains('marvel')) ? '' : 'none';
+                } else {
+                    const cls = classMap[filter] || filter;
+                    card.style.display = card.classList.contains(cls) ? '' : 'none';
+                }
+            });
+
+            sortCards(document.getElementById('sortOrder').value);
+        });
+    });
 });
