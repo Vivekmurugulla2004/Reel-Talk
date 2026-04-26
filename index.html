@@ -210,11 +210,42 @@
         <div class="newsletter-inner">
             <h2 class="newsletter-heading">Stay in the Loop</h2>
             <p class="newsletter-desc">When updates come in, you'll be the first to know everything that dropped that week — all in one place, not one at a time. No spam, unsubscribe anytime.</p>
-            <form class="newsletter-form" action="https://reeltalkhub.beehiiv.com/subscribe" method="GET" target="_blank">
-                <input type="email" name="email" class="newsletter-input" placeholder="your@email.com" aria-label="Email address" required>
-                <button type="submit" class="newsletter-btn">Subscribe</button>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" class="newsletter-input" id="newsletter-email" placeholder="your@email.com" aria-label="Email address" required>
+                <button type="submit" class="newsletter-btn" id="newsletter-btn">Subscribe</button>
             </form>
-            <p class="newsletter-note">Powered by Beehiiv</p>
+            <p class="newsletter-note" id="newsletter-note">Powered by Beehiiv</p>
+            <script>
+                document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('newsletter-email').value;
+                    const btn = document.getElementById('newsletter-btn');
+                    const note = document.getElementById('newsletter-note');
+                    btn.textContent = 'Subscribing...';
+                    btn.disabled = true;
+                    fetch('https://magic.beehiiv.com/v1/ccd6cd5f-6fa2-4db3-9367-24d90d4047a3', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: email })
+                    })
+                    .then(function(res) {
+                        if (res.ok || res.status === 201) {
+                            btn.textContent = 'Subscribed!';
+                            document.getElementById('newsletter-email').value = '';
+                            note.textContent = 'Check your inbox to confirm your subscription.';
+                        } else {
+                            btn.textContent = 'Subscribe';
+                            btn.disabled = false;
+                            note.textContent = 'Something went wrong. Please try again.';
+                        }
+                    })
+                    .catch(function() {
+                        btn.textContent = 'Subscribe';
+                        btn.disabled = false;
+                        note.textContent = 'Something went wrong. Please try again.';
+                    });
+                });
+            </script>
         </div>
     </section>
 
