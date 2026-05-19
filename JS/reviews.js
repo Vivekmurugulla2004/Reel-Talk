@@ -15,7 +15,7 @@ recentReviews.forEach((review, i) => {
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
     slide.innerHTML = `
-        <img src="${review.reviewImage}" alt="${review.title}" width="1440" height="810" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}>
+        <img src="${review.reviewImage}" alt="${review.title}" width="1440" height="810" loading="lazy">
         <div class="carousel-slide-overlay">
             <span class="slide-category">${review.type}</span>
             <h3 class="slide-title">${review.title}</h3>
@@ -26,15 +26,38 @@ recentReviews.forEach((review, i) => {
     track.appendChild(slide);
 });
 
+// Build dot indicators
+const dotsContainer = document.createElement('div');
+dotsContainer.className = 'carousel-dots';
+dotsContainer.setAttribute('role', 'tablist');
+dotsContainer.setAttribute('aria-label', 'Carousel slide indicators');
+const dots = recentReviews.map((review, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1) + ': ' + review.title);
+    dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+    dotsContainer.appendChild(dot);
+    return dot;
+});
+track.parentElement.appendChild(dotsContainer);
+
 let currentIndex = 0;
 let autoTimer;
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function goTo(index) {
     currentIndex = (index + recentReviews.length) % recentReviews.length;
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach((d, i) => {
+        d.classList.toggle('active', i === currentIndex);
+        d.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
+    });
 }
 
 function startAuto() {
+    if (prefersReduced) return;
     autoTimer = setInterval(() => goTo(currentIndex + 1), 10000);
 }
 
@@ -46,8 +69,32 @@ function resetAuto() {
 prevBtn.addEventListener('click', () => { goTo(currentIndex - 1); resetAuto(); });
 nextBtn.addEventListener('click', () => { goTo(currentIndex + 1); resetAuto(); });
 
-// Pause on hover
-track.parentElement.addEventListener('mouseenter', () => clearInterval(autoTimer));
-track.parentElement.addEventListener('mouseleave', startAuto);
+// Pause auto-advance on hover and keyboard focus within the carousel
+const wrapper = track.parentElement;
+wrapper.addEventListener('mouseenter', () => clearInterval(autoTimer));
+wrapper.addEventListener('mouseleave', startAuto);
+wrapper.addEventListener('focusin',   () => clearInterval(autoTimer));
+wrapper.addEventListener('focusout',  (e) => {
+    if (!wrapper.contains(e.relatedTarget)) startAuto();
+});
+
+// Touch / swipe support
+let touchStartX = 0;
+wrapper.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].clientX;
+}, { passive: true });
+wrapper.addEventListener('touchend', (e) => {
+    const delta = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(delta) > 40) {
+        goTo(currentIndex + (delta < 0 ? 1 : -1));
+        resetAuto();
+    }
+}, { passive: true });
+
+// Keyboard: left/right arrows when carousel is focused
+wrapper.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft')  { goTo(currentIndex - 1); resetAuto(); }
+    if (e.key === 'ArrowRight') { goTo(currentIndex + 1); resetAuto(); }
+});
 
 startAuto();

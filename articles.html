@@ -21,6 +21,7 @@
     <meta name="twitter:description" content="Essays, rankings, and editorials on film, games, and storytelling.">
     <meta name="twitter:image" content="https://reeltalkhub.com/Images/Article/Main/Costume%20Article.webp">
     <link rel="canonical" href="https://reeltalkhub.com/articles.html">
+    <meta name="theme-color" content="#CF9FFF">
 </head>
 
 <body>
@@ -41,30 +42,57 @@
         <a href="articles.html">Articles</a>
     </nav>
 
-    <div class="feed-header">
-        <h2 class="feed-title">Articles</h2>
-        <p class="feed-desc">Essays, rankings, and editorials on film, games, and storytelling.</p>
-        <div class="filter-tabs">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="Commentary">Commentary</button>
-            <button class="filter-btn" data-filter="Ranking">Rankings</button>
+    <main>
+        <div class="feed-header">
+            <h2 class="feed-title">Articles</h2>
+            <p class="feed-desc">Essays, rankings, and editorials on film, games, and storytelling.</p>
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Commentary">Commentary</button>
+                <button class="filter-btn" data-filter="Ranking">Rankings</button>
+            </div>
         </div>
-    </div>
+        <div class="articles-feed" id="articles-feed"></div>
+    </main>
 
-    <div class="articles-feed" id="articles-feed"></div>
+    <section class="newsletter-section" id="newsletter">
+        <div class="newsletter-inner">
+            <h2 class="newsletter-heading">Stay in the Loop</h2>
+            <p class="newsletter-desc">New reviews and articles — all in one place, not one at a time. No spam, unsubscribe anytime.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" class="newsletter-input" id="newsletter-email" placeholder="your@email.com" aria-label="Email address" required>
+                <button type="submit" class="newsletter-btn" id="newsletter-btn">Subscribe</button>
+            </form>
+            <p class="newsletter-note" id="newsletter-note">Powered by Beehiiv</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p class="footer-text">Find more of my work:</p>
+        <ul class="footer-links">
+            <li>&#127916; <a href="https://boxd.it/4HvP3">Letterboxd</a></li>
+            <li>&#128247; <a href="https://www.instagram.com/reeltalk_hub">Instagram</a></li>
+            <li>&#128231; <a href="#newsletter">Newsletter</a></li>
+        </ul>
+    </footer>
 
     <script defer src="JS/articles-data.js"></script>
     <script defer src="JS/articles-feed.js"></script>
-
     <script defer src="JS/nav.js"></script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF"></script>
+    <script defer src="JS/newsletter.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-07DEE9B5DF');
+        function loadAnalytics() {
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF';
+            document.head.appendChild(s);
+        }
+        if ('requestIdleCallback' in window) { requestIdleCallback(loadAnalytics); }
+        else { window.addEventListener('load', function() { setTimeout(loadAnalytics, 2000); }); }
     </script>
 </body>
 </html>

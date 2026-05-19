@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const links = card.querySelectorAll('a');
         const titleLink = links[links.length - 1];
         const raw = titleLink ? titleLink.textContent : '';
-        return raw.replace(/\s*\(\d{4}\)\s*$/, '').trim().toLowerCase().replace(/^(the|a|an)\s+/, '');
+        return raw.replace(/\s*\(\d{4}\)\s*$/, '').trim().toLowerCase().replace(/^(the|a|an)\s+/i, '');
     }
 
     function sortCards(order) {

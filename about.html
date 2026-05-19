@@ -19,67 +19,8 @@
     <meta name="twitter:title" content="About — Reel Talk">
     <meta name="twitter:description" content="Reel Talk is a review site covering movies, games, and comics — focused on storytelling, themes, and what makes them work.">
     <meta name="twitter:image" content="https://reeltalkhub.com/Images/Main/Reel%20Talk%20Logo%20Clear.webp">
-    <style>
-        .about-wrapper {
-            max-width: 720px;
-            margin: 48px auto 80px;
-            padding: 0 24px;
-        }
-        .about-wrapper h2 {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 1.6rem;
-            color: #1a1a1a;
-            margin: 0 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #CF9FFF;
-        }
-        .about-wrapper p {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: #2a2a2a;
-            margin: 0 0 18px;
-        }
-        .about-wrapper ul {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: #2a2a2a;
-            margin: 0 0 40px;
-            padding-left: 1.4em;
-        }
-        .about-wrapper ul li {
-            margin-bottom: 4px;
-        }
-        .about-section {
-            margin-bottom: 48px;
-        }
-        .about-links-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 8px;
-        }
-        .about-link-pill {
-            display: inline-block;
-            font-family: 'Trebuchet MS', Arial, sans-serif;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: #7B2FBE;
-            background: #f0e6ff;
-            padding: 9px 20px;
-            border-radius: 999px;
-            text-decoration: none;
-            transition: background 0.15s ease;
-        }
-        .about-link-pill:hover {
-            background: #CF9FFF;
-        }
-        @media (max-width: 600px) {
-            .about-wrapper { margin-top: 28px; padding: 0 16px; }
-        }
-    </style>
     <link rel="canonical" href="https://reeltalkhub.com/about.html">
+    <meta name="theme-color" content="#CF9FFF">
 </head>
 <body>
     <header>
@@ -134,23 +75,42 @@
         </div>
     </main>
 
+    <section class="newsletter-section" id="newsletter">
+        <div class="newsletter-inner">
+            <h2 class="newsletter-heading">Stay in the Loop</h2>
+            <p class="newsletter-desc">New reviews and articles — all in one place, not one at a time. No spam, unsubscribe anytime.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" class="newsletter-input" id="newsletter-email" placeholder="your@email.com" aria-label="Email address" required>
+                <button type="submit" class="newsletter-btn" id="newsletter-btn">Subscribe</button>
+            </form>
+            <p class="newsletter-note" id="newsletter-note">Powered by Beehiiv</p>
+        </div>
+    </section>
+
     <footer class="site-footer">
         <p class="footer-text">Find more of my work:</p>
         <ul class="footer-links">
-            <li><a href="https://boxd.it/4HvP3">Letterboxd</a></li>
-            <li><a href="https://www.instagram.com/reeltalk_hub">Instagram</a></li>
+            <li>&#127916; <a href="https://boxd.it/4HvP3">Letterboxd</a></li>
+            <li>&#128247; <a href="https://www.instagram.com/reeltalk_hub">Instagram</a></li>
+            <li>&#128231; <a href="#newsletter">Newsletter</a></li>
         </ul>
     </footer>
 
     <script defer src="JS/nav.js"></script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-07DEE9B5DF');
-</script>
+    <script defer src="JS/newsletter.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-07DEE9B5DF');
+        function loadAnalytics() {
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF';
+            document.head.appendChild(s);
+        }
+        if ('requestIdleCallback' in window) { requestIdleCallback(loadAnalytics); }
+        else { window.addEventListener('load', function() { setTimeout(loadAnalytics, 2000); }); }
+    </script>
 </body>
 </html>
