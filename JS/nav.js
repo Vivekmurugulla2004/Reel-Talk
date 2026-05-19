@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // ── Skip-to-content link ───────────────────────────────────────────
+    const mainEl = document.querySelector('main');
+    if (mainEl) {
+        if (!mainEl.id) mainEl.id = 'main-content';
+        const skip = document.createElement('a');
+        skip.href = '#main-content';
+        skip.className = 'skip-link';
+        skip.textContent = 'Skip to main content';
+        document.body.insertBefore(skip, document.body.firstChild);
+    }
+
     // ── Active nav link ────────────────────────────────────────────────
     const path = window.location.pathname;
     document.querySelectorAll('.subheader a').forEach(function (a) {
@@ -63,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Desktop: top-right of header
     const headerEl = document.querySelector('header');
     if (headerEl) {
-        headerEl.style.position = 'relative';
         headerEl.appendChild(makeSwitch('dark-switch-desktop'));
     }
 

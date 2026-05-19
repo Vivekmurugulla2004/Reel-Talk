@@ -76,6 +76,7 @@
             max-width: 200px;
         }
     </style>
+    <meta name="theme-color" content="#CF9FFF">
 </head>
 <body>
     <header>
@@ -116,20 +117,26 @@
     <footer class="site-footer">
         <p class="footer-text">Find more of my work:</p>
         <ul class="footer-links">
-            <li><a href="https://boxd.it/4HvP3">Letterboxd</a></li>
-            <li><a href="https://www.instagram.com/reeltalk_hub">Instagram</a></li>
+            <li>&#127916; <a href="https://boxd.it/4HvP3">Letterboxd</a></li>
+            <li>&#128247; <a href="https://www.instagram.com/reeltalk_hub">Instagram</a></li>
+            <li>&#128231; <a href="index.html#newsletter">Newsletter</a></li>
         </ul>
     </footer>
 
     <script defer src="JS/nav.js"></script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-07DEE9B5DF');
-</script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-07DEE9B5DF');
+        function loadAnalytics() {
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF';
+            document.head.appendChild(s);
+        }
+        if ('requestIdleCallback' in window) { requestIdleCallback(loadAnalytics); }
+        else { window.addEventListener('load', function() { setTimeout(loadAnalytics, 2000); }); }
+    </script>
 </body>
 </html>

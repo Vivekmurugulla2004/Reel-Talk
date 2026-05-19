@@ -88,6 +88,7 @@
     <meta name="twitter:image" content="https://reeltalkhub.com/Images/Review/Review/tasm%20review.webp">
     <link rel="canonical" href="https://reeltalkhub.com/">
     <meta name="google-site-verification" content="o8Sc1YRpH4Rb25KsknBRf5-EuxU5duXn2fipoRTWbp8">
+    <meta name="theme-color" content="#CF9FFF">
 </head>
 <body>
     <header>
@@ -215,37 +216,6 @@
                 <button type="submit" class="newsletter-btn" id="newsletter-btn">Subscribe</button>
             </form>
             <p class="newsletter-note" id="newsletter-note">Powered by Beehiiv</p>
-            <script>
-                document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const email = document.getElementById('newsletter-email').value;
-                    const btn = document.getElementById('newsletter-btn');
-                    const note = document.getElementById('newsletter-note');
-                    btn.textContent = 'Subscribing...';
-                    btn.disabled = true;
-                    fetch('https://magic.beehiiv.com/v1/ccd6cd5f-6fa2-4db3-9367-24d90d4047a3', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ email: email })
-                    })
-                    .then(function(res) {
-                        if (res.ok || res.status === 201) {
-                            btn.textContent = 'Subscribed!';
-                            document.getElementById('newsletter-email').value = '';
-                            note.textContent = 'Check your inbox to confirm your subscription.';
-                        } else {
-                            btn.textContent = 'Subscribe';
-                            btn.disabled = false;
-                            note.textContent = 'Something went wrong. Please try again.';
-                        }
-                    })
-                    .catch(function() {
-                        btn.textContent = 'Subscribe';
-                        btn.disabled = false;
-                        note.textContent = 'Something went wrong. Please try again.';
-                    });
-                });
-            </script>
         </div>
     </section>
 
@@ -281,6 +251,7 @@
         })();
     </script>
     <script defer src="JS/nav.js"></script>
+    <script defer src="JS/newsletter.js"></script>
     <!-- Analytics: queue events immediately, load script only when browser is idle -->
     <script>
         window.dataLayer = window.dataLayer || [];

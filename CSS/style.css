@@ -25,6 +25,7 @@ body {
 .Header_Image {
     transform: scale(1.1);
 }
+.Header_Image img { height: auto; }
 .subheader a {
     display: block;
     color: black;
@@ -51,6 +52,29 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
+/* Skip-to-main-content link (screen readers + keyboard users) */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: #7B2FBE;
+    color: #fff;
+    padding: 10px 18px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 0 0 6px 0;
+    transition: top 0.1s ease;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* Header needs relative positioning for the dark-mode switch */
+header { position: relative; }
+
 /* Visually hidden but readable by screen readers */
 .sr-only {
     position: absolute;
@@ -68,43 +92,6 @@ body {
 .nav-toggle {
     display: none;
 }
-.about h1 {
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2rem;
-    max-width: 1200px;
-    margin: 36px auto 12px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #CF9FFF;
-}
-.about img {
-    display: block;
-    margin: 20px auto;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-.about-paragraph {
-    text-align: justify;
-    max-width: 1200px;
-    margin: auto;
-    font-size: larger;
-    line-height: 1.75;
-    margin-top: 0px;
-    margin-bottom: 20px;
-}
-
-.about-list {
-    text-align: justify;
-    max-width: 1200px;
-    margin: auto;
-    font-size: larger;
-    line-height: 1.75;
-    margin-top: 0px;
-    margin-bottom: 20px;
-}
-
 /* Homepage sections */
 .site-intro {
     max-width: 800px;
@@ -238,24 +225,6 @@ body {
     text-decoration: underline;
 }
 
-/* Review card category label and description */
-.review-card-category {
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #7B2FBE;
-}
-
-.review-card-desc {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 0.82rem;
-    color: #666;
-    line-height: 1.5;
-    margin: 0;
-}
-
 /* Footer */
 .site-footer {
     background: #1a1a1a;
@@ -302,37 +271,6 @@ body {
     width: 100%;
     background: #111;
     margin-bottom: 56px;
-}
-
-.carousel-section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 28px 24px 16px;
-}
-
-.carousel-section-title {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.6rem;
-    color: #fff;
-    margin: 0;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #CF9FFF;
-}
-
-.carousel-see-all {
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #DBB8FF;
-    text-decoration: none;
-    flex-shrink: 0;
-}
-
-.carousel-see-all:hover {
-    text-decoration: underline;
 }
 
 .carousel-hero-wrapper {
@@ -638,20 +576,6 @@ label[for="sortOrder"] {
         padding-left: 17px;
     }
 
-    .about img {
-        display: block;
-        margin: 20px auto;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    .about-paragraph {
-        padding: 0 5%;
-        font-size: medium;
-    }
-
     .streaming-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 0 5%;
@@ -714,15 +638,6 @@ label[for="sortOrder"] {
         padding: 0 16px;
     }
 
-    .about-list {
-        padding-left: 5%;
-        margin: 10px 5%;
-    }
-
-    .about-list li {
-        margin-bottom: 8px;
-        font-size: medium;
-    }
 }
 
 @media (max-width: 480px) {
@@ -875,6 +790,61 @@ label[for="sortOrder"] {
 /* Related reviews */
 [data-theme="dark"] .related-heading { color: #666; }
 [data-theme="dark"] .related-title { color: #ccc; }
+
+/* ── About page ──────────────────────────────────────────────────────── */
+.about-wrapper {
+    max-width: 720px;
+    margin: 48px auto 80px;
+    padding: 0 24px;
+}
+.about-wrapper h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #CF9FFF;
+}
+.about-wrapper p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #2a2a2a;
+    margin: 0 0 18px;
+}
+.about-wrapper ul {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #2a2a2a;
+    margin: 0 0 40px;
+    padding-left: 1.4em;
+}
+.about-wrapper ul li { margin-bottom: 4px; }
+.about-section { margin-bottom: 48px; }
+.about-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+.about-link-pill {
+    display: inline-block;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #7B2FBE;
+    background: #f0e6ff;
+    padding: 9px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+.about-link-pill:hover { background: #CF9FFF; }
+
+@media (max-width: 600px) {
+    .about-wrapper { margin-top: 28px; padding: 0 16px; }
+}
 
 /* About page */
 [data-theme="dark"] .about-wrapper h2 { color: #f0e6ff; border-bottom-color: #3a1f6e; }
@@ -1071,3 +1041,23 @@ label[for="sortOrder"] {
 [data-theme="dark"] .filter-btn { border-color: #7B2FBE; color: #CF9FFF; }
 [data-theme="dark"] .filter-btn:hover,
 [data-theme="dark"] .filter-btn.active { background: #7B2FBE; color: #fff; }
+
+/* ── Focus-visible global baseline ──────────────────────────────────── */
+:focus-visible {
+    outline: 3px solid #7B2FBE;
+    outline-offset: 3px;
+}
+[data-theme="dark"] :focus-visible {
+    outline-color: #CF9FFF;
+}
+
+/* ── Reduced-motion: disable decorative transitions ─────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .carousel-hero-track { transition: none !important; }
+}
