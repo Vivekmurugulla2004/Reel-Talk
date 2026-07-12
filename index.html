@@ -5,15 +5,15 @@
     <script>if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");</script>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reel Talk — Movie, Game & Comic Reviews</title>
+    <title>Reel Talk - Movie, Game & Comic Reviews</title>
     <meta name="description" content="Reel Talk features in-depth movie, game, and comic reviews focused on storytelling, themes, and what makes them work.">
-<!-- Critical CSS inlined to prevent layout shift -->
     <style>
         body{margin:0;background-color:#FAFAFA}
         header{display:flex;align-items:center;justify-content:center;background:#CF9FFF}
         .Header_Title{text-align:center;font-family:Georgia,'Times New Roman',Times,serif;color:#000}
-        .Header_Title h1{font-size:2rem;margin:12px 0}
+        .Header_Title_text{font-size:2rem;margin:12px 0}
         .Header_Image{transform:scale(1.1)}
         .subheader{display:flex;justify-content:space-evenly;background:#DBB8FF;box-shadow:0 2px 6px rgba(0,0,0,.25)}
         .subheader a{display:block;color:#000;font-family:'Trebuchet MS',Arial,sans-serif;padding:10px 16px;font-weight:600;font-size:15px;text-decoration:none}
@@ -52,7 +52,7 @@
         .site-footer{padding:28px 24px;text-align:center}
         .footer-links{list-style:none;padding:0;margin:0;display:flex;justify-content:center;gap:24px}
         @media(max-width:768px){
-            .Header_Title h1{font-size:1rem;margin:8px 0}
+            .Header_Title_text{font-size:1rem;margin:8px 0}
             .subheader{flex-wrap:wrap;justify-content:flex-start;align-items:center;padding:0;min-height:44px}
             .subheader a{display:none;width:100%;padding:13px 20px;font-size:15px;border-top:1px solid rgba(0,0,0,.1);text-align:left}
             .subheader.nav-open a{display:block}
@@ -76,18 +76,32 @@
     </style>
     <link rel="preload" as="image" href="Images/Review/Review/baahubali review image.webp" fetchpriority="high">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/components.css">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Reel Talk">
-    <meta property="og:title" content="Reel Talk — Movie, Game & Comic Reviews">
+    <meta property="og:title" content="Reel Talk - Movie, Game & Comic Reviews">
     <meta property="og:description" content="Reel Talk features in-depth movie, game, and comic reviews focused on storytelling, themes, and what makes them work.">
     <meta property="og:url" content="https://reeltalkhub.com/">
     <meta property="og:image" content="https://reeltalkhub.com/Images/Review/Review/tasm%20review.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Reel Talk — Movie, Game & Comic Reviews">
+    <meta name="twitter:title" content="Reel Talk - Movie, Game & Comic Reviews">
     <meta name="twitter:description" content="Reel Talk features in-depth movie, game, and comic reviews focused on storytelling, themes, and what makes them work.">
     <meta name="twitter:image" content="https://reeltalkhub.com/Images/Review/Review/tasm%20review.webp">
     <link rel="canonical" href="https://reeltalkhub.com/">
     <meta name="google-site-verification" content="o8Sc1YRpH4Rb25KsknBRf5-EuxU5duXn2fipoRTWbp8">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Reel Talk",
+        "url": "https://reeltalkhub.com/",
+        "logo": "https://reeltalkhub.com/Images/Main/Reel%20Talk%20Logo%20Clear.webp",
+        "sameAs": [
+            "https://boxd.it/4HvP3",
+            "https://www.instagram.com/reeltalk_hub"
+        ]
+    }
+    </script>
     <meta name="theme-color" content="#CF9FFF">
 </head>
 <body>
@@ -96,7 +110,7 @@
             <img src="Images/Main/Reel Talk Logo Clear.webp" alt="Reel Talk Logo" width="100" height="100" style="height:auto"/>
         </div>
         <div class="Header_Title">
-            <h1>All Things Screen & Play</h1>
+            <p class="Header_Title_text">All Things Screen & Play</p>
         </div>
     </header>
     <nav class="subheader">
@@ -109,14 +123,12 @@
     </nav>
 
     <main>
-        <!-- Recent Reviews Carousel -->
-        <!-- Add new entries to JS/reviews-data.js — this updates automatically -->
-        <section class="reviews-carousel-section">
+        <h1 class="sr-only">Reel Talk - Movie, Game & Comic Reviews</h1>
+                        <section class="reviews-carousel-section">
             <h2 class="sr-only">Recent Reviews</h2>
             <div class="carousel-hero-wrapper">
                 <div class="carousel-hero-track" id="carousel-track">
-                    <!-- First slide is static HTML for LCP — update this AND the preload href in <head> whenever the newest review changes -->
-                    <div class="carousel-slide">
+                                        <div class="carousel-slide">
                         <img src="Images/Review/Review/baahubali review image.webp" alt="Baahubali: The Beginning (2015)" width="1440" height="810" fetchpriority="high">
                         <div class="carousel-slide-overlay">
                             <span class="slide-category">Movie Review</span>
@@ -131,14 +143,12 @@
             </div>
         </section>
 
-        <!-- Intro -->
-        <section class="site-intro">
+                <section class="site-intro">
             <p>In-depth reviews on movies, games, and comics. The focus is always on story, themes, and what makes them worth your time.</p>
             <a href="about.html" class="about-btn">Learn more about this site →</a>
         </section>
 
-        <!-- Start Here -->
-        <section class="home-section">
+                <section class="home-section">
             <h2 class="section-heading">Start Here</h2>
             <div class="start-here-grid">
                 <a href="reviews.html" class="start-here-card">
@@ -164,53 +174,52 @@
             </div>
         </section>
 
-        <!-- Recent Posts -->
-        <section class="home-section">
-            <h2 class="section-heading">Recent Posts</h2>
+                <div id="rt-home-dynamic"></div>
+
+                <section class="home-section">
+            <h2 class="section-heading">Latest Articles</h2>
             <div class="popular-posts-grid" id="recent-posts-grid"></div>
             <div class="section-cta">
                 <a href="articles.html" class="cta-link">See all articles →</a>
             </div>
         </section>
 
-        <!-- Start Streaming -->
-        <section class="home-section streaming-section">
+                <section class="home-section streaming-section">
             <h2 class="section-heading">Start Streaming</h2>
             <p class="section-subtext">New to streaming or looking to sign up? Some links support Reel Talk at no extra cost to you.</p>
             <div class="streaming-grid">
                 <a href="https://www.netflix.com/signup" target="_blank" rel="noopener" class="streaming-card netflix">
-                    <img src="Images/Steaming Logos/netflix.webp" alt="Netflix" loading="lazy" width="134" height="36" style="max-width:120px;width:100%;object-fit:contain">
+                    <img src="Images/Steaming Logos/netflix.webp" alt="Netflix" loading="lazy" width="134" height="36" style="max-width:120px;width:100%;object-fit:contain" decoding="async">
                     <span class="service-cta">Sign Up →</span>
                 </a>
                 <a href="https://www.amazon.com/amazonprime" target="_blank" rel="noopener" class="streaming-card prime">
-                    <img src="Images/Steaming Logos/prime video.webp" alt="Prime Video" loading="lazy" width="117" height="36" style="max-width:120px;width:100%;object-fit:contain">
+                    <img src="Images/Steaming Logos/prime video.webp" alt="Prime Video" loading="lazy" width="117" height="36" style="max-width:120px;width:100%;object-fit:contain" decoding="async">
                     <span class="service-cta">Try Prime Free →</span>
                 </a>
                 <a href="https://www.disneyplus.com/welcome" target="_blank" rel="noopener" class="streaming-card disney">
-                    <img src="Images/Steaming Logos/disney plus.webp" alt="Disney+" loading="lazy" width="66" height="36" style="max-width:120px;width:100%;object-fit:contain">
+                    <img src="Images/Steaming Logos/disney plus.webp" alt="Disney+" loading="lazy" width="66" height="36" style="max-width:120px;width:100%;object-fit:contain" decoding="async">
                     <span class="service-cta">Sign Up →</span>
                 </a>
                 <a href="https://www.hulu.com/welcome" target="_blank" rel="noopener" class="streaming-card hulu">
-                    <img src="Images/Steaming Logos/hulu logo.webp" alt="Hulu" loading="lazy" width="107" height="36" style="max-width:120px;width:100%;object-fit:contain">
+                    <img src="Images/Steaming Logos/hulu logo.webp" alt="Hulu" loading="lazy" width="107" height="36" style="max-width:120px;width:100%;object-fit:contain" decoding="async">
                     <span class="service-cta">Start Free Trial →</span>
                 </a>
                 <a href="https://www.max.com" target="_blank" rel="noopener" class="streaming-card max">
-                    <img src="Images/Steaming Logos/hbo max.webp" alt="Max" loading="lazy" width="64" height="48" style="max-width:140px;width:100%;object-fit:contain">
+                    <img src="Images/Steaming Logos/hbo max.webp" alt="Max" loading="lazy" width="64" height="48" style="max-width:140px;width:100%;object-fit:contain" decoding="async">
                     <span class="service-cta">Sign Up →</span>
                 </a>
                 <a href="https://tv.apple.com" target="_blank" rel="noopener" class="streaming-card appletv">
-                    <img src="Images/Steaming Logos/apple tv.webp" alt="Apple TV+" loading="lazy" width="96" height="36" style="max-width:120px;width:100%;object-fit:contain">
+                    <img src="Images/Steaming Logos/apple tv.webp" alt="Apple TV+" loading="lazy" width="96" height="36" style="max-width:120px;width:100%;object-fit:contain" decoding="async">
                     <span class="service-cta">Try Free →</span>
                 </a>
             </div>
         </section>
     </main>
 
-    <!-- Newsletter -->
-    <section class="newsletter-section" id="newsletter">
+        <section class="newsletter-section" id="newsletter">
         <div class="newsletter-inner">
             <h2 class="newsletter-heading">Stay in the Loop</h2>
-            <p class="newsletter-desc">When updates come in, you'll be the first to know everything that dropped that week — all in one place, not one at a time. No spam, unsubscribe anytime.</p>
+            <p class="newsletter-desc">When updates come in, you'll be the first to know everything that dropped that week - all in one place, not one at a time. No spam, unsubscribe anytime.</p>
             <form class="newsletter-form" id="newsletter-form">
                 <input type="email" class="newsletter-input" id="newsletter-email" placeholder="your@email.com" aria-label="Email address" required>
                 <button type="submit" class="newsletter-btn" id="newsletter-btn">Subscribe</button>
@@ -219,8 +228,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="site-footer">
+        <footer class="site-footer">
         <p class="footer-text">Find more of my work:</p>
         <ul class="footer-links">
             <li>🎬 <a href="https://boxd.it/4HvP3">Letterboxd</a></li>
@@ -231,6 +239,10 @@
 
     <script src="JS/reviews-data.js"></script>
     <script src="JS/reviews.js"></script>
+    <script src="JS/comics-data.js"></script>
+    <script src="JS/games-data.js"></script>
+    <script src="JS/rt-cards.js"></script>
+    <script src="JS/home-render.js"></script>
     <script src="JS/articles-data.js"></script>
     <script>
         (function () {
@@ -244,7 +256,7 @@
                 a.href = article.url;
                 a.className = 'popular-post-card';
                 a.innerHTML =
-                    '<img src="' + article.image + '" alt="' + article.title + '" width="400" height="225" loading="lazy">' +
+                    '<img src="' + article.image + '" alt="' + article.title + '" width="400" height="225" loading="lazy" decoding="async">' +
                     '<span class="popular-post-title">' + article.title + '</span>';
                 grid.appendChild(a);
             });
@@ -252,23 +264,6 @@
     </script>
     <script defer src="JS/nav.js"></script>
     <script defer src="JS/newsletter.js"></script>
-    <!-- Analytics: queue events immediately, load script only when browser is idle -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-07DEE9B5DF');
-        function loadAnalytics() {
-            var s = document.createElement('script');
-            s.async = true;
-            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF';
-            document.head.appendChild(s);
-        }
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadAnalytics);
-        } else {
-            window.addEventListener('load', function() { setTimeout(loadAnalytics, 2000); });
-        }
-    </script>
+<script defer src="JS/analytics.js"></script>
 </body>
 </html>

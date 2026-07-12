@@ -5,10 +5,13 @@
     <script>if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");</script>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found — Reel Talk</title>
+    <title>Page Not Found - Reel Talk</title>
     <meta name="description" content="The page you're looking for doesn't exist. Head back to Reel Talk for movie, game, and comic reviews.">
+    <meta name="robots" content="noindex, follow">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/components.css">
     <style>
         .not-found {
             max-width: 600px;
@@ -84,7 +87,7 @@
             <img src="Images/Main/Reel Talk Logo Clear.webp" alt="Reel Talk Logo" width="100" height="auto"/>
         </div>
         <div class="Header_Title">
-            <h1>All Things Screen & Play</h1>
+            <p class="Header_Title_text">All Things Screen & Play</p>
         </div>
     </header>
     <nav class="subheader">
@@ -124,19 +127,6 @@
     </footer>
 
     <script defer src="JS/nav.js"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-07DEE9B5DF');
-        function loadAnalytics() {
-            var s = document.createElement('script');
-            s.async = true;
-            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF';
-            document.head.appendChild(s);
-        }
-        if ('requestIdleCallback' in window) { requestIdleCallback(loadAnalytics); }
-        else { window.addEventListener('load', function() { setTimeout(loadAnalytics, 2000); }); }
-    </script>
+<script defer src="JS/analytics.js"></script>
 </body>
 </html>
