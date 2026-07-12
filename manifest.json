@@ -1,0 +1,16 @@
+{
+    "name": "Reel Talk — Movie, Game & Comic Reviews",
+    "short_name": "Reel Talk",
+    "description": "In-depth movie, game, and comic reviews focused on storytelling, themes, and what makes them work.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#FAFAFA",
+    "theme_color": "#CF9FFF",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "598x598",
+            "type": "image/png"
+        }
+    ]
+}

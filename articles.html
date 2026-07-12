@@ -5,19 +5,21 @@
     <script>if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");</script>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Essays, rankings, and editorials on film, games, and storytelling.">
-    <title>Articles — Reel Talk</title>
+    <title>Articles - Reel Talk</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/components.css">
     <link rel="stylesheet" href="CSS/articles.css">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Reel Talk">
-    <meta property="og:title" content="Articles — Reel Talk">
+    <meta property="og:title" content="Articles - Reel Talk">
     <meta property="og:description" content="Essays, rankings, and editorials on film, games, and storytelling.">
     <meta property="og:url" content="https://reeltalkhub.com/articles.html">
     <meta property="og:image" content="https://reeltalkhub.com/Images/Article/Main/Costume%20Article.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Articles — Reel Talk">
+    <meta name="twitter:title" content="Articles - Reel Talk">
     <meta name="twitter:description" content="Essays, rankings, and editorials on film, games, and storytelling.">
     <meta name="twitter:image" content="https://reeltalkhub.com/Images/Article/Main/Costume%20Article.webp">
     <link rel="canonical" href="https://reeltalkhub.com/articles.html">
@@ -30,7 +32,7 @@
             <img src="Images/Main/Reel Talk Logo Clear.webp" alt="Reel Talk Logo" width="100" height="auto"/>
         </div>
         <div class="Header_Title">
-            <h1>All Things Screen & Play</h1>
+            <p class="Header_Title_text">All Things Screen & Play</p>
         </div>
     </header>
     <nav class="subheader">
@@ -44,7 +46,7 @@
 
     <main>
         <div class="feed-header">
-            <h2 class="feed-title">Articles</h2>
+            <h1 class="feed-title">Articles</h1>
             <p class="feed-desc">Essays, rankings, and editorials on film, games, and storytelling.</p>
             <div class="filter-tabs">
                 <button class="filter-btn active" data-filter="all">All</button>
@@ -58,7 +60,7 @@
     <section class="newsletter-section" id="newsletter">
         <div class="newsletter-inner">
             <h2 class="newsletter-heading">Stay in the Loop</h2>
-            <p class="newsletter-desc">New reviews and articles — all in one place, not one at a time. No spam, unsubscribe anytime.</p>
+            <p class="newsletter-desc">New reviews and articles - all in one place, not one at a time. No spam, unsubscribe anytime.</p>
             <form class="newsletter-form" id="newsletter-form">
                 <input type="email" class="newsletter-input" id="newsletter-email" placeholder="your@email.com" aria-label="Email address" required>
                 <button type="submit" class="newsletter-btn" id="newsletter-btn">Subscribe</button>
@@ -80,19 +82,6 @@
     <script defer src="JS/articles-feed.js"></script>
     <script defer src="JS/nav.js"></script>
     <script defer src="JS/newsletter.js"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-07DEE9B5DF');
-        function loadAnalytics() {
-            var s = document.createElement('script');
-            s.async = true;
-            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF';
-            document.head.appendChild(s);
-        }
-        if ('requestIdleCallback' in window) { requestIdleCallback(loadAnalytics); }
-        else { window.addEventListener('load', function() { setTimeout(loadAnalytics, 2000); }); }
-    </script>
+<script defer src="JS/analytics.js"></script>
 </body>
 </html>

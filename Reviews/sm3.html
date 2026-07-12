@@ -5,20 +5,22 @@
     <script>if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");</script>
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="manifest" href="../manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spider-Man 3 (2007) Review — Reel Talk</title>
+    <title>Spider-Man 3 (2007) Review - Reel Talk</title>
     <meta name="description" content="Peter Parker faces his darkest chapter as multiple villains and personal demons collide.">
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/components.css">
     <link rel="stylesheet" href="../CSS/reviews.css">
     <link rel="stylesheet" href="../CSS/review_details.css">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Reel Talk">
-    <meta property="og:title" content="Spider-Man 3 (2007) Review — Reel Talk">
+    <meta property="og:title" content="Spider-Man 3 (2007) Review - Reel Talk">
     <meta property="og:description" content="Peter Parker faces his darkest chapter as multiple villains and personal demons collide.">
     <meta property="og:url" content="https://reeltalkhub.com/Reviews/sm3.html">
     <meta property="og:image" content="https://reeltalkhub.com/Images/Review/Review/sm3%20review%20.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Spider-Man 3 (2007) Review — Reel Talk">
+    <meta name="twitter:title" content="Spider-Man 3 (2007) Review - Reel Talk">
     <meta name="twitter:description" content="Peter Parker faces his darkest chapter as multiple villains and personal demons collide.">
     <meta name="twitter:image" content="https://reeltalkhub.com/Images/Review/Review/sm3%20review%20.webp">
     <link rel="canonical" href="https://reeltalkhub.com/Reviews/sm3.html">
@@ -29,9 +31,9 @@
             <img src="../Images/Main/Reel Talk Logo Clear.webp" alt="Reel Talk Logo" width="100" height="auto"/>
         </div>
         <div class="Header_Title">
-            <h1>
+            <p class="Header_Title_text">
                 All Things Screen & Play
-            </h1>
+            </p>
         </div>
     </header>
     <nav class="subheader">
@@ -60,7 +62,7 @@
         <span class="rating-stars">★★★☆☆</span>
         <span class="rating-score">3 / 5</span>
     </div>
-        <img src="../Images/Review/Review/sm3 review .jpg" alt="spider-man 3 review image" width="893" height="auto"/>
+        <img fetchpriority="high" src="../Images/Review/Review/sm3 review .jpg" alt="spider-man 3 review image" width="893" height="auto"/>
         <p class="top_quote">
             "We always have a choice"
         </p>
@@ -104,36 +106,29 @@
     <p class="related-heading">More Reviews</p>
     <div class="related-grid">
         <a href="spider-man.html" class="related-card">
-            <img src="../Images/Review/Poster/spider-man poster.jpg" alt="Spider-Man (2002)" loading="lazy">
+            <img src="../Images/Review/Poster/spider-man poster.jpg" alt="Spider-Man (2002)" loading="lazy" decoding="async">
             <span class="related-title">Spider-Man (2002)</span>
         </a>
         <a href="sm2.html" class="related-card">
-            <img src="../Images/Review/Poster/sm2 poster.jpg" alt="Spider-Man 2 (2004)" loading="lazy">
+            <img src="../Images/Review/Poster/sm2 poster.jpg" alt="Spider-Man 2 (2004)" loading="lazy" decoding="async">
             <span class="related-title">Spider-Man 2 (2004)</span>
         </a>
         <a href="tasm.html" class="related-card">
-            <img src="../Images/Review/Poster/tasm poster.jpg" alt="The Amazing Spider-Man (2012)" loading="lazy">
+            <img src="../Images/Review/Poster/tasm poster.jpg" alt="The Amazing Spider-Man (2012)" loading="lazy" decoding="async">
             <span class="related-title">The Amazing Spider-Man (2012)</span>
         </a>
     </div>
 </section>
+<script src="../JS/reviews-data.js"></script><script src="../JS/review-components.js"></script>
 <script defer src="../JS/nav.js"></script><script defer src="../JS/omdb.js"></script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-07DEE9B5DF');
-</script>
-
-    </main>
+<script defer src="../JS/analytics.js"></script>
+</main>
 
     <section class="newsletter-section" id="newsletter">
         <div class="newsletter-inner">
             <h2 class="newsletter-heading">Stay in the Loop</h2>
-            <p class="newsletter-desc">New reviews and articles — all in one place, not one at a time. No spam, unsubscribe anytime.</p>
+            <p class="newsletter-desc">New reviews and articles - all in one place, not one at a time. No spam, unsubscribe anytime.</p>
             <form class="newsletter-form" id="newsletter-form">
                 <input type="email" class="newsletter-input" id="newsletter-email" placeholder="your@email.com" aria-label="Email address" required>
                 <button type="submit" class="newsletter-btn" id="newsletter-btn">Subscribe</button>

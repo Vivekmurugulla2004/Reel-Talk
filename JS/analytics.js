@@ -1,0 +1,3 @@
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-07DEE9B5DF');function loadAnalyticsScript(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-07DEE9B5DF';document.head.appendChild(s);}
+if('requestIdleCallback'in window){requestIdleCallback(loadAnalyticsScript);}else{window.addEventListener('load',function(){setTimeout(loadAnalyticsScript,2000);});}
