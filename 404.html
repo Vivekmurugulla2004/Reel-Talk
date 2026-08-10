@@ -19,18 +19,21 @@
             padding: 80px 24px 100px;
             text-align: center;
         }
-        .not-found-code {
+        .not-found .not-found-code {
             font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 6rem;
             font-weight: 700;
-            color: #CF9FFF;
+            color: var(--rt-violet);
             line-height: 1;
             margin: 0 0 8px;
+        }
+        [data-theme="dark"] .not-found .not-found-code {
+            color: var(--rt-lilac);
         }
         .not-found h1 {
             font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 1.6rem;
-            color: #1a1a1a;
+            color: var(--rt-ink);
             margin: 0 0 16px;
         }
         .not-found p {
@@ -57,7 +60,7 @@
             transition: background 0.15s ease, transform 0.15s ease;
         }
         .not-found-link.primary {
-            background: #7B2FBE;
+            background: var(--rt-violet);
             color: #fff;
         }
         .not-found-link.primary:hover {
@@ -66,15 +69,15 @@
         }
         .not-found-link.secondary {
             background: #f0e6ff;
-            color: #7B2FBE;
+            color: var(--rt-violet);
         }
         .not-found-link.secondary:hover {
-            background: #DBB8FF;
+            background: var(--rt-lilac-soft);
             transform: translateY(-2px);
         }
         .not-found-divider {
             border: none;
-            border-top: 2px solid #CF9FFF;
+            border-top: 2px solid var(--rt-lilac);
             margin: 56px auto 0;
             max-width: 200px;
         }
@@ -84,7 +87,7 @@
 <body>
     <header>
         <div class="Header_Image">
-            <img src="Images/Main/Reel Talk Logo Clear.webp" alt="Reel Talk Logo" width="100" height="auto"/>
+            <img src="Images/Main/Reel Talk Logo Clear.webp" alt="Reel Talk Logo" width="100" height="100"/>
         </div>
         <div class="Header_Title">
             <p class="Header_Title_text">All Things Screen & Play</p>
@@ -93,7 +96,6 @@
     <nav class="subheader">
         <a href="index.html">Home</a>
         <a href="reviews.html">Movie Reviews</a>
-        <a href="tv.html">TV Reviews</a>
         <a href="games.html">Game Reviews</a>
         <a href="comics.html">Comic Reviews</a>
         <a href="articles.html">Articles</a>
