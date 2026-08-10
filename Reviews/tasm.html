@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../CSS/components.css">
     <link rel="stylesheet" href="../CSS/reviews.css">
     <link rel="stylesheet" href="../CSS/review_details.css">
+    <link rel="preconnect" href="https://www.omdbapi.com">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Reel Talk">
     <meta property="og:title" content="The Amazing Spider-Man (2012) Review - Reel Talk">
@@ -28,7 +29,7 @@
 <body>
     <header>
         <div class="Header_Image">
-            <img src="../Images/Main/Reel Talk Logo Clear.webp" alt="Reel Talk Logo" width="100" height="auto"/>
+            <img src="../Images/Main/Reel Talk Logo Clear.webp" alt="Reel Talk Logo" width="100" height="100"/>
         </div>
         <div class="Header_Title">
             <p class="Header_Title_text">
@@ -39,7 +40,6 @@
     <nav class="subheader">
         <a href="../index.html">Home</a>
         <a href="../reviews.html">Movie Reviews</a>
-        <a href="../tv.html">TV Reviews</a>
         <a href="../games.html">Game Reviews</a>
         <a href="../comics.html">Comic Reviews</a>
         <a href="../articles.html">Articles</a>
@@ -62,7 +62,8 @@
         <span class="rating-stars">★★★★☆</span>
         <span class="rating-score">4 / 5</span>
     </div>
-        <img fetchpriority="high" src="../Images/Review/Review/tasm review.jpg" alt="The Amazing Spider-Man review image" width="893" height="auto"/>
+        <div class="rt-panel-reserve" id="rt-panel-reserve"></div>
+        <img fetchpriority="high" src="../Images/Review/Review/tasm review.webp" alt="The Amazing Spider-Man review image" width="893" height="502"/>
         <p class="top_quote">
             "Really? You seriously think I'm a cop? Cop in a skin-tight red and blue suit?"
         </p>
@@ -92,49 +93,14 @@
         </p>
     </article>
 
-<section class="related-reviews">
-    <p class="related-heading">More Reviews</p>
-    <div class="related-grid">
-        <a href="spider-man.html" class="related-card">
-            <img src="../Images/Review/Poster/spider-man poster.jpg" alt="Spider-Man (2002)" loading="lazy" decoding="async">
-            <span class="related-title">Spider-Man (2002)</span>
-        </a>
-        <a href="sm2.html" class="related-card">
-            <img src="../Images/Review/Poster/sm2 poster.jpg" alt="Spider-Man 2 (2004)" loading="lazy" decoding="async">
-            <span class="related-title">Spider-Man 2 (2004)</span>
-        </a>
-        <a href="bvs.html" class="related-card">
-            <img src="../Images/Review/Poster/bvs poster.jpg" alt="Batman v Superman (2016)" loading="lazy" decoding="async">
-            <span class="related-title">Batman v Superman (2016)</span>
-        </a>
-    </div>
-</section>
+<div id="rt-related-mount"></div>
 <script src="../JS/reviews-data.js"></script><script src="../JS/review-components.js"></script>
 <script defer src="../JS/nav.js"></script><script defer src="../JS/omdb.js"></script>
 
 <script defer src="../JS/analytics.js"></script>
 </main>
 
-    <section class="newsletter-section" id="newsletter">
-        <div class="newsletter-inner">
-            <h2 class="newsletter-heading">Stay in the Loop</h2>
-            <p class="newsletter-desc">New reviews and articles - all in one place, not one at a time. No spam, unsubscribe anytime.</p>
-            <form class="newsletter-form" id="newsletter-form">
-                <input type="email" class="newsletter-input" id="newsletter-email" placeholder="your@email.com" aria-label="Email address" required>
-                <button type="submit" class="newsletter-btn" id="newsletter-btn">Subscribe</button>
-            </form>
-            <p class="newsletter-note" id="newsletter-note">Powered by Beehiiv</p>
-        </div>
-    </section>
-
-<footer class="site-footer">
-    <p class="footer-text">Find more of my work:</p>
-    <ul class="footer-links">
-        <li>&#127916; <a href="https://boxd.it/4HvP3">Letterboxd</a></li>
-        <li>&#128247; <a href="https://www.instagram.com/reeltalk_hub">Instagram</a></li>
-        <li>&#128231; <a href="../index.html#newsletter">Newsletter</a></li>
-    </ul>
-</footer>
+    <div id="rt-footer-mount"></div>
     <script defer src="../JS/newsletter.js"></script>
 </body>
 </html>

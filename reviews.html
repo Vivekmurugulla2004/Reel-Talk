@@ -28,7 +28,7 @@
 <body>
     <header>
         <div class="Header_Image">  
-            <img src="Images/Main/Reel Talk Logo Clear.webp" alt="Reel Talk Logo" width="100" height="auto"/>
+            <img src="Images/Main/Reel Talk Logo Clear.webp" alt="Reel Talk Logo" width="100" height="100"/>
         </div>
         <div class="Header_Title">
             <p class="Header_Title_text">
@@ -39,7 +39,6 @@
     <nav class="subheader">
         <a href="index.html">Home</a>
         <a href="reviews.html">Movie Reviews</a>
-        <a href="tv.html">TV Reviews</a>
         <a href="games.html">Game Reviews</a>
         <a href="comics.html">Comic Reviews</a>
         <a href="articles.html">Articles</a>
@@ -59,27 +58,9 @@
         <div class="Review_Card" id="review-grid"></div>
     </main>
 
-    <section class="newsletter-section" id="newsletter">
-        <div class="newsletter-inner">
-            <h2 class="newsletter-heading">Stay in the Loop</h2>
-            <p class="newsletter-desc">New reviews and articles - all in one place, not one at a time. No spam, unsubscribe anytime.</p>
-            <form class="newsletter-form" id="newsletter-form">
-                <input type="email" class="newsletter-input" id="newsletter-email" placeholder="your@email.com" aria-label="Email address" required>
-                <button type="submit" class="newsletter-btn" id="newsletter-btn">Subscribe</button>
-            </form>
-            <p class="newsletter-note" id="newsletter-note">Powered by Beehiiv</p>
-        </div>
-    </section>
+    <div id="rt-footer-mount"></div>
 
-    <footer class="site-footer">
-        <p class="footer-text">Find more of my work:</p>
-        <ul class="footer-links">
-            <li>&#127916; <a href="https://boxd.it/4HvP3">Letterboxd</a></li>
-            <li>&#128247; <a href="https://www.instagram.com/reeltalk_hub">Instagram</a></li>
-            <li>&#128231; <a href="#newsletter">Newsletter</a></li>
-        </ul>
-    </footer>
-
+<script src="JS/img-fallback.js"></script>
 <script src="JS/reviews-data.js"></script>
 <script src="JS/feed-render.js"></script>
 <script>renderFeed(allReviews, { filterClass: function () { return ''; } });</script>

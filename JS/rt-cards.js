@@ -3,17 +3,23 @@ function rtBuildMediaIndex(){return[].concat((typeof allReviews!=='undefined'?al
 function rtOverallScore(item){if(!item.scores)return 0;const vals=Object.keys(item.scores).map(function(k){return item.scores[k];}).filter(function(v){return v>0;});return vals.reduce(function(a,b){return a+b;},0)/vals.length;}
 function rtPosterCard(item){const score=rtOverallScore(item);return('<a href="'+item.url+'" class="rt-poster-card">'+
 '<div class="rt-poster rt-card">'+
-'<img src="'+item.poster+'" alt="'+rtEscapeHtml(item.title)+' poster" loading="lazy" width="225" height="337">'+
+'<img src="'+item.poster+'" alt="'+rtEscapeHtml(item.title)+' poster" loading="lazy" width="225" height="337" onerror="rtImgFallback(this)">'+
 (score?'<span class="rt-poster-score">'+score.toFixed(1)+'</span>':'')+
 '</div>'+
 '<span class="rt-poster-type">'+rtEscapeHtml(item.mediaLabel)+'</span>'+
 '<span class="rt-poster-title">'+rtEscapeHtml(item.title)+'</span>'+
 '</a>');}
-function rtCardRow(id,eyebrow,heading,sub,items){if(!items.length)return'';return('<section class="rt-section reveal" id="'+id+'">'+
+function rtCardRow(id,eyebrow,heading,sub,items,seeAllHref){if(!items.length)return'';return('<section class="rt-section reveal" id="'+id+'">'+
 '<div class="rt-section-head">'+
 '<div><span class="rt-eyebrow">'+rtEscapeHtml(eyebrow)+'</span><h2>'+rtEscapeHtml(heading)+'</h2></div>'+
+(sub||seeAllHref?'<div class="rt-section-head-right">'+
 (sub?'<p class="rt-section-sub">'+rtEscapeHtml(sub)+'</p>':'')+
+(seeAllHref?'<a class="rt-see-all" href="'+seeAllHref+'">See all &#8594;</a>':'')+
+'</div>':'')+
 '</div>'+
 '<div class="rt-recommend-grid">'+items.map(rtPosterCard).join('')+'</div>'+
 '</section>');}
-function rtObserveReveals(root){if('IntersectionObserver'in window){const io=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');io.unobserve(entry.target);}});},{threshold:0.1});root.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});}else{root.querySelectorAll('.reveal').forEach(function(el){el.classList.add('is-visible');});}}
+function rtObserveReveals(root){if('IntersectionObserver'in window){const io=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');io.unobserve(entry.target);}});},{threshold:0.1});root.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});}else{root.querySelectorAll('.reveal').forEach(function(el){el.classList.add('is-visible');});}
+rtSetupRailFades(root);}
+function rtSetupRailFades(root){root.querySelectorAll('.rt-recommend-grid').forEach(function(rail){function update(){const atEnd=Math.ceil(rail.scrollLeft+rail.clientWidth)>=rail.scrollWidth-1;rail.classList.toggle('has-more',rail.scrollWidth>rail.clientWidth+4&&!atEnd);}
+update();rail.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update,{passive:true});});}
