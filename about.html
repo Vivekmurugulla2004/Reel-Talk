@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <script>if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");</script>
+    <script src="JS/img-fallback.js"></script>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Reel Talk</title>
-    <meta name="description" content="Reel Talk is a review site covering movies, games, and comics - focused on storytelling, themes, and what makes them work.">
+    <meta name="description" content="Reel Talk is a place for honest opinions about movies, comics, and games - reviews, rankings, and collections with a simple five-star rating and no filler.">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/components.css">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Reel Talk">
     <meta property="og:title" content="About - Reel Talk">
-    <meta property="og:description" content="Reel Talk is a review site covering movies, games, and comics - focused on storytelling, themes, and what makes them work.">
+    <meta property="og:description" content="Reel Talk is a place for honest opinions about movies, comics, and games - reviews, rankings, and collections with a simple five-star rating and no filler.">
     <meta property="og:url" content="https://reeltalkhub.com/about.html">
     <meta property="og:image" content="https://reeltalkhub.com/Images/Main/Reel%20Talk%20Logo%20Clear.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About - Reel Talk">
-    <meta name="twitter:description" content="Reel Talk is a review site covering movies, games, and comics - focused on storytelling, themes, and what makes them work.">
+    <meta name="twitter:description" content="Reel Talk is a place for honest opinions about movies, comics, and games - reviews, rankings, and collections with a simple five-star rating and no filler.">
     <meta name="twitter:image" content="https://reeltalkhub.com/Images/Main/Reel%20Talk%20Logo%20Clear.webp">
     <link rel="canonical" href="https://reeltalkhub.com/about.html">
     <meta name="theme-color" content="#CF9FFF">
@@ -39,34 +40,39 @@
         <a href="games.html">Game Reviews</a>
         <a href="comics.html">Comic Reviews</a>
         <a href="articles.html">Articles</a>
+        <a href="collections.html">Collections</a>
     </nav>
 
     <main>
         <div class="about-wrapper">
 
             <div class="about-section">
-                <h1>About Me</h1>
+                <h1>About Reel Talk</h1>
                 <p>
-                    Welcome to Reel Talk! This site is my personal space for reviews, analysis, and commentary on movies, games, and comics. I care deeply about storytelling, whether it comes from a big studio release, a cult favorite, or something that makes you stop and think, "What did I just watch?" Reel Talk started as a fun creative outlet and slowly turned into something more intentional. Over time, it became a place to dig a little deeper into why stories work, why they don't, and why some stick with us long after the credits roll. I try to approach everything here with honesty, curiosity, and just enough humor to keep things grounded.
+                    Reel Talk is a place for honest opinions about movies, comics, games, and the stories behind them. Every review here comes from actually finishing the thing and having a real reaction to it - not a synopsis, not a diplomatic list of pros and cons, just an argument for why it works or why it doesn't.
                 </p>
                 <p>Here on Reel Talk, you'll find:</p>
                 <ul>
-                    <li>Movie reviews covering both classic and contemporary films</li>
-                    <li>Game reviews with a focus on narrative, design, and overall experience</li>
-                    <li>Comic reviews exploring different eras, styles, and creators</li>
-                    <li>Commentary, featuring articles and editorials on film, pop culture, and storytelling</li>
+                    <li>Movie reviews covering both classics and new releases</li>
+                    <li>Comic reviews spanning different eras, creators, and styles</li>
+                    <li>Game reviews focused on narrative, design, and overall experience</li>
+                    <li>Articles and rankings for the arguments too big to fit inside a single review</li>
+                    <li>Collections that group everything by mood or theme instead of by date</li>
                 </ul>
             </div>
 
             <div class="about-section">
-                <h2>The Story So Far</h2>
-                <p>What started as a small creative experiment has grown into a long-term passion project:</p>
-                <ul>
-                    <li>2023: Began writing about films purely for fun and to organize my thoughts</li>
-                    <li>2024: Refined my voice and structure, expanding into games and comics</li>
-                    <li>2025: Built this website from scratch to give all my writing a permanent home</li>
-                    <li>2026: Continues to evolve as an ongoing, independent project</li>
-                </ul>
+                <h2>The Rating</h2>
+                <p>
+                    The rating is simple: stars out of five. That's the whole system. Everything else on a review page - a favorite scene, a standout performance, a piece of trivia - is there because it's worth knowing, not because you need it to understand the score.
+                </p>
+            </div>
+
+            <div class="about-section">
+                <h2>Why Movies, Comics, and Games Share a Site</h2>
+                <p>
+                    They're telling the same kinds of stories through different tools, and a good story is worth talking about no matter which format it showed up in. That's the only real editorial rule here - no comment section, no algorithm, just reviews written by someone who cares more about getting the argument right than being nice about it.
+                </p>
                 <div class="about-links-row">
                     <a href="https://boxd.it/4HvP3" target="_blank" rel="noopener" class="about-link-pill">Letterboxd</a>
                     <a href="https://www.instagram.com/reeltalk_hub" target="_blank" rel="noopener" class="about-link-pill">Instagram</a>
@@ -78,7 +84,7 @@
 
     <div id="rt-footer-mount"></div>
 
-    <script defer src="JS/nav.js"></script>
+    <script src="JS/reviews-data.js"></script><script src="JS/comics-data.js"></script><script src="JS/games-data.js"></script><script src="JS/articles-data.js"></script><script defer src="JS/nav.js"></script>
     <script defer src="JS/newsletter.js"></script>
 <script defer src="JS/analytics.js"></script>
 </body>

@@ -14,16 +14,25 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (!article) return;
     const streamingAttr = article.dataset.streaming;
     if (streamingAttr) insertWhereToWatch(article, streamingAttr);
-    if (!OMDB_API_KEY || OMDB_API_KEY === 'YOUR_OMDB_API_KEY') return;
     const imdbId = article.dataset.imdbid;
-    if (!imdbId) return;
+    if (!OMDB_API_KEY || OMDB_API_KEY === 'YOUR_OMDB_API_KEY' || !imdbId) return;
+    // Reserve space before the async fetch resolves so the block landing later doesn't shift the page (CLS).
+    const rating = article.querySelector('.review-rating');
+    const h4 = article.querySelector('h4');
+    const anchor = rating || h4;
+    let placeholder = null;
+    if (anchor) {
+        placeholder = document.createElement('div');
+        placeholder.className = 'omdb-reserve';
+        anchor.insertAdjacentElement('afterend', placeholder);
+    }
     try {
         const res = await fetch('https://www.omdbapi.com/?i=' + imdbId + '&apikey=' + OMDB_API_KEY);
-        if (!res.ok) return;
+        if (!res.ok) { if (placeholder) placeholder.remove(); return; }
         const data = await res.json();
-        if (data.Response === 'False') return;
-        insertOMDBBlock(article, data);
-    } catch (e) {}
+        if (data.Response === 'False') { if (placeholder) placeholder.remove(); return; }
+        insertOMDBBlock(article, data, placeholder);
+    } catch (e) { if (placeholder) placeholder.remove(); }
 });
 function insertWhereToWatch(article, streamingAttr) {
     const keys = streamingAttr.split(',').map(k => k.trim()).filter(k => PLATFORMS[k]);
@@ -38,7 +47,7 @@ function insertWhereToWatch(article, streamingAttr) {
     const html = '<div class="where-to-watch"><p class="wtw-label">Where to Watch</p><div class="wtw-links">' + buttons + '</div></div>';
     article.insertAdjacentHTML('beforeend', html);
 }
-function insertOMDBBlock(article, data) {
+function insertOMDBBlock(article, data, placeholder) {
     const imdb     = data.imdbRating !== 'N/A' ? data.imdbRating : null;
     const rt       = data.Ratings?.find(r => r.Source === 'Rotten Tomatoes')?.Value ?? null;
     const meta     = data.Ratings?.find(r => r.Source === 'Metacritic')?.Value?.replace('/100', '') ?? null;
@@ -57,6 +66,10 @@ function insertOMDBBlock(article, data) {
         (director ? '<p class="omdb-meta"><strong>Director:</strong> ' + director + '</p>' : '') +
         (cast ? '<p class="omdb-meta"><strong>Cast:</strong> ' + cast + '</p>' : '') +
         '<a href="' + trailerLink + '" target="_blank" rel="noopener" class="trailer-btn">▶ Watch Trailer on YouTube</a></div>';
+    if (placeholder) {
+        placeholder.outerHTML = html;
+        return;
+    }
     const rating = article.querySelector('.review-rating');
     const h4 = article.querySelector('h4');
     const anchor = rating || h4;
